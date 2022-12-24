@@ -16,12 +16,15 @@
 #define WORLDCUP23A2_H_
 
 #include "wet2util.h"
-
+#include "RankTree.h"
+#include "Team.h"
 class world_cup_t {
 private:
 	//
 	// Here you may add anything you want
 	//
+    RankTree<Team> teamsTree;
+
 	
 public:
 	// <DO-NOT-MODIFY> {
