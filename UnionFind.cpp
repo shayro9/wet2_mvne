@@ -63,3 +63,12 @@ void UnionFind::Unite(int playerid1, int playerid2) {
     }
 }
 
+bool UnionFind::doesExist(int playerId) {
+    int index = hash(playerId);
+    Player* temp = dynamic_cast<Player*>(players[index]);
+    if (temp == nullptr){
+        return false;
+    }
+    return true;
+}
+

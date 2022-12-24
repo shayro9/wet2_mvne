@@ -1,6 +1,11 @@
 #include "worldcup23a2.h"
 
-world_cup_t::world_cup_t()
+
+
+
+
+
+world_cup_t::world_cup_t(): teamsTree(RankTree<Team>()), teamsAbilityTree(RankTree<TeamAbility>()), players(UnionFind())
 {
 	// TODO: Your code goes here
 }
@@ -13,13 +18,49 @@ world_cup_t::~world_cup_t()
 StatusType world_cup_t::add_team(int teamId)
 {
 	// TODO: Your code goes here
+
+    if (teamId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+    if (teamsTree.find(teamId) != nullptr){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Team new_team = Team(teamId);
+        TeamAbility new_teamAbility = TeamAbility(teamId);
+        new_team.SetTeamAbilityPointer(&new_teamAbility);
+        teamsTree.insert(new_team);
+        teamsAbilityTree.insert(new_teamAbility);
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
 	return StatusType::SUCCESS;
 }
 
 StatusType world_cup_t::remove_team(int teamId)
 {
 	// TODO: Your code goes here
-	return StatusType::FAILURE;
+    if (teamId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+    Team* to_remove = &teamsTree.find(teamId)->data;
+    if (to_remove == nullptr){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        teamsAbilityTree.remove(to_remove->getTeamAbilityPointer());
+        teamsTree.remove(to_remove);
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
+
+    return StatusType::FAILURE;
 }
 
 StatusType world_cup_t::add_player(int playerId, int teamId,
@@ -27,12 +68,61 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
                                    int ability, int cards, bool goalKeeper)
 {
 	// TODO: Your code goes here
+
+    if (playerId <= 0 || teamId <=0 || gamesPlayed<0 || cards<0 || !spirit.isvalid()){
+        return StatusType::INVALID_INPUT;
+    }
+
+    if (players.doesExist(playerId) || !teamsTree.find(teamId)){
+        return StatusType::FAILURE;
+    }
+
+    Team* currTeam = &teamsTree.find(teamId)->data;
+    Player new_player = Player(playerId, teamId, spirit, gamesPlayed, ability, cards, goalKeeper);
+    if (goalKeeper){
+        currTeam->makeValid();
+    }
+    if (currTeam->getRootPlayer()){
+        players.AddPlayer(new_player, currTeam);
+    }
+    else{
+        players.AddFirstPlayer(new_player, currTeam);
+        currTeam->setRootPlayer(&new_player);
+        new_player.setTeam(currTeam);
+    }
+    currTeam->addAbility(ability);
+    currTeam->getTeamAbilityPointer()->addAbility(ability);
+
 	return StatusType::SUCCESS;
 }
 
 output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
 {
 	// TODO: Your code goes here
+    if (teamId1<=0 || teamId2<=0 || teamId1==teamId2){
+        return StatusType::INVALID_INPUT;
+    }
+    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
+        return StatusType::FAILURE;
+    }
+    if (!teamsTree.find(teamId1)->data.isValid() || !teamsTree.find(teamId1)->data.isValid()){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Team *team1 = &teamsTree.find(teamId1)->data;
+        Team *team2 = &teamsTree.find(teamId2)->data;
+        int score1 = team1->getPoints() + team1->getAbility();
+        int score2 = team2->getPoints() + team2->getAbility();
+        if (score1 > score2){
+            return 1;
+        }
+        if (score2 > score1){
+            return 3;
+        }
+        
+
+    }
 	return StatusType::SUCCESS;
 }
 

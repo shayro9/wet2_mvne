@@ -18,12 +18,15 @@
 #include "wet2util.h"
 #include "RankTree.h"
 #include "Team.h"
+#include "UnionFind.h"
 class world_cup_t {
 private:
 	//
 	// Here you may add anything you want
 	//
     RankTree<Team> teamsTree;
+    RankTree<TeamAbility> teamsAbilityTree;
+    UnionFind players;
 
 	
 public:

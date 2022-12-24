@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Player.cpp" "CMakeFiles/wet2_mvne.dir/Player.cpp.obj" "gcc" "CMakeFiles/wet2_mvne.dir/Player.cpp.obj.d"
+  "C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Team.cpp" "CMakeFiles/wet2_mvne.dir/Team.cpp.obj" "gcc" "CMakeFiles/wet2_mvne.dir/Team.cpp.obj.d"
+  "C:/Users/amida/CLionProjects/untitled1/wet2_mvne/TeamAbility.cpp" "CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj" "gcc" "CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj.d"
   "C:/Users/amida/CLionProjects/untitled1/wet2_mvne/UnionFind.cpp" "CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj" "gcc" "CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj.d"
   "C:/Users/amida/CLionProjects/untitled1/wet2_mvne/worldcup23a2.cpp" "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj" "gcc" "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj.d"
   )

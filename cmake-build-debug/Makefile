@@ -152,6 +152,54 @@ Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+Team.obj: Team.cpp.obj
+.PHONY : Team.obj
+
+# target to build an object file
+Team.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/Team.cpp.obj
+.PHONY : Team.cpp.obj
+
+Team.i: Team.cpp.i
+.PHONY : Team.i
+
+# target to preprocess a source file
+Team.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/Team.cpp.i
+.PHONY : Team.cpp.i
+
+Team.s: Team.cpp.s
+.PHONY : Team.s
+
+# target to generate assembly for a file
+Team.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/Team.cpp.s
+.PHONY : Team.cpp.s
+
+TeamAbility.obj: TeamAbility.cpp.obj
+.PHONY : TeamAbility.obj
+
+# target to build an object file
+TeamAbility.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj
+.PHONY : TeamAbility.cpp.obj
+
+TeamAbility.i: TeamAbility.cpp.i
+.PHONY : TeamAbility.i
+
+# target to preprocess a source file
+TeamAbility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.i
+.PHONY : TeamAbility.cpp.i
+
+TeamAbility.s: TeamAbility.cpp.s
+.PHONY : TeamAbility.s
+
+# target to generate assembly for a file
+TeamAbility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.s
+.PHONY : TeamAbility.cpp.s
+
 UnionFind.obj: UnionFind.cpp.obj
 .PHONY : UnionFind.obj
 
@@ -212,6 +260,12 @@ help:
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
+	@echo ... Team.obj
+	@echo ... Team.i
+	@echo ... Team.s
+	@echo ... TeamAbility.obj
+	@echo ... TeamAbility.i
+	@echo ... TeamAbility.s
 	@echo ... UnionFind.obj
 	@echo ... UnionFind.i
 	@echo ... UnionFind.s

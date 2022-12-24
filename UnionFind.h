@@ -23,6 +23,7 @@ public:
     void AddPlayer(Player player, Team* team);          //add player to existing set
     Team* FindTeam(int playerid);
     void Unite(int playerid1, int playerid2);
+    bool doesExist(int playerId);
 
 
 };
