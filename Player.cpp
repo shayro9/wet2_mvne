@@ -13,7 +13,7 @@ void Player::setTeam(Team* team) {
 
 Player::Player(int playerId, int teamId, const permutation_t &spirit, int gamesPlayed, int ability, int cards,
                bool goalKeeper): m_playerId(playerId), m_teamId(teamId), m_spirit(spirit), m_gamesPlayed(gamesPlayed), m_ability(ability), m_cards(cards), m_goalKeeper(goalKeeper),
-               m_team(nullptr), m_father(nullptr){
+               m_team(nullptr), m_father(nullptr), m_teamPlayed(0), m_teamPlayedBefore(0){
 
 }
 
@@ -27,5 +27,33 @@ Player *Player::getFather() {
 
 Team *Player::getTeam() {
     return m_team;
+}
+
+void Player::setTeamPlayedBefore(int num) {
+    m_teamPlayedBefore = num;
+}
+
+void Player::setTeamPlayed(int num) {
+    m_teamPlayed = num;
+}
+
+int Player::getGamesPlayed() {
+    return m_gamesPlayed;
+}
+
+int Player::getTeamPlayedBefore() {
+    return m_teamPlayedBefore;
+}
+
+int Player::getTeamPlayed() {
+    return m_teamPlayed;
+}
+
+void Player::addCards(int amount) {
+    m_cards += amount;
+}
+
+int Player::getCards() {
+    return m_cards;
 }
 

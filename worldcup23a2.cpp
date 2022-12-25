@@ -52,6 +52,9 @@ StatusType world_cup_t::remove_team(int teamId)
     }
     try
     {
+        Player* root = &teamsTree.find(teamId)->data->getRootPlayer();
+        root->setTeamPlayed(to_remove->getTeamPlayed());
+        root->setTeam(nullptr);
         teamsAbilityTree.remove(to_remove->getTeamAbilityPointer());
         teamsTree.remove(to_remove);
     }
@@ -79,6 +82,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
 
     Team* currTeam = &teamsTree.find(teamId)->data;
     Player new_player = Player(playerId, teamId, spirit, gamesPlayed, ability, cards, goalKeeper);
+    new_player.setTeamPlayedBefore(currTeam->getTeamPlayed());
     if (goalKeeper){
         currTeam->makeValid();
     }
@@ -120,7 +124,7 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
         if (score2 > score1){
             return 3;
         }
-        
+
 
     }
 	return StatusType::SUCCESS;
@@ -129,24 +133,97 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
 output_t<int> world_cup_t::num_played_games_for_player(int playerId)
 {
 	// TODO: Your code goes here
+    if (playerId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+    if (!players.doesExist(playerId)){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Player* currPlayer = players.getPlayer(playerId);
+        Player* currRoot = players.findRoot(playerId);
+        int gamesPlayed = currPlayer->getGamesPlayed();
+        int teamPlayedBefore = currPlayer->getTeamPlayedBefore();
+        if (currRoot->getTeam()){ // if team exist
+            int teamPlayed = currRoot->getTeam()->getTeamPlayed();
+            return gamesPlayed + teamPlayed - teamPlayedBefore;
+        }
+        else{
+            int teamPlayed = currRoot->getTeamPlayed();
+            return gamesPlayed + teamPlayed - teamPlayedBefore;
+        }
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
+
 	return 22;
 }
 
 StatusType world_cup_t::add_player_cards(int playerId, int cards)
 {
 	// TODO: Your code goes here
-	return StatusType::SUCCESS;
+    if (playerId<=0 || cards<0){
+        return StatusType::INVALID_INPUT;
+    }
+    Player* currPlayer = players.getPlayer(playerId);
+    if (!players.FindTeam(playerId) || players.doesExist(playerId)){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        currPlayer->addCards(cards);
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
+    return StatusType::SUCCESS;
 }
 
 output_t<int> world_cup_t::get_player_cards(int playerId)
 {
 	// TODO: Your code goes here
+    if (playerId<=0){
+        return StatusType::INVALID_INPUT;
+    }
+    if (players.doesExist(playerId)){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Player* currPlayer = players.getPlayer(playerId);
+        return currPlayer->getCards();
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
 	return StatusType::SUCCESS;
 }
 
 output_t<int> world_cup_t::get_team_points(int teamId)
 {
 	// TODO: Your code goes here
+    if (teamId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+
+    // Team* currTeam = &teams.find(teamId)->data;
+    if (!teamsTree.find(teamId)){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Team* currTeam = teamsTree.find(teamId);
+        return currTeam->getPoints();
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
 	return 30003;
 }
 

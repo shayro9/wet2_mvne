@@ -4,7 +4,7 @@
 #include "Team.h"
 
 Team::Team(int teamId): m_teamId(teamId), m_points(0), m_abilitySum(0), m_rootPlayer(nullptr), m_teamAbility(nullptr), m_isValid(
-        false){
+        false), m_gamesPlayed(0){
 
 }
 
@@ -50,6 +50,14 @@ int Team::getPoints() {
 
 int Team::getAbility() {
     return m_abilitySum;
+}
+
+int Team::getTeamPlayed() {
+    return m_gamesPlayed;
+}
+
+Player *Team::getRootPlayer() {
+    return m_rootPlayer;
 }
 
 

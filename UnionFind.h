@@ -22,8 +22,10 @@ public:
     void AddFirstPlayer(Player player, Team* team);     //create new set
     void AddPlayer(Player player, Team* team);          //add player to existing set
     Team* FindTeam(int playerid);
+    Player* findRoot(int playerId);
     void Unite(int playerid1, int playerid2);
     bool doesExist(int playerId);
+    Player* getPlayer(int playerId);
 
 
 };

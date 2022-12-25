@@ -72,3 +72,24 @@ bool UnionFind::doesExist(int playerId) {
     return true;
 }
 
+Player* UnionFind::getPlayer(int playerId) {
+    int index = hash(playerId);
+    Player* temp = players[index];
+    return temp;
+}
+
+Player *UnionFind::findRoot(int playerId) {
+    int index = hash(playerId);
+    //check if exist
+    Player* currPlayer = players[index];
+    while (currPlayer->getFather()){
+        currPlayer = currPlayer->getFather();
+    }
+    Player* root = currPlayer;
+    currPlayer = players[index];
+    while (currPlayer->getFather()){
+        currPlayer->setFather(root);
+    }
+    return root;
+}
+

@@ -18,6 +18,7 @@ class Team{
     Player* m_rootPlayer;
     TeamAbility* m_teamAbility;
     bool m_isValid;
+    int m_gamesPlayed;
 
 
 
@@ -33,6 +34,7 @@ public:
     bool isValid();
     int getPoints();
     int getAbility();
+    int getTeamPlayed();
 
     friend bool operator== (const Team&, const Team&);
     friend bool operator< (const Team&, const Team&);

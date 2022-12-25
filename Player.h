@@ -18,6 +18,8 @@ class Player{
     int m_cards;
     bool m_goalKeeper;
     int m_ability;
+    int m_teamPlayedBefore;
+    int m_teamPlayed;
     Team* m_team;
     Player* m_father;
     int extra;
@@ -33,6 +35,13 @@ public:
     int getId();
     void setTeam(Team* team);
     void setFather(Player* player);
+    void setTeamPlayedBefore(int num);
+    void setTeamPlayed(int num);
+    void addCards(int amount);
     Player* getFather();
     Team* getTeam();
+    int getGamesPlayed();
+    int getTeamPlayedBefore();
+    int getTeamPlayed();
+    int getCards();
 };
