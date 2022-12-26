@@ -4,33 +4,41 @@
 #include "UnionFind.h"
 #define X 2
 
-UnionFind::UnionFind(): players(new Player*[X]), sizes(new int[X]), currSize(0), maxSize(X) {
+UnionFind::UnionFind(): players(DynamicHash()), sizes(new int[X]), currSize(0), maxSize(X) {
 
 }
-
+/*
 void UnionFind::AddFirstPlayer(Player player, Team* team) {
     if (currSize == maxSize){
 
     }
-    int index = hash(player.getId());
+    players.insert(player);
+    /*int index = hash(player.getId());
     player.setTeam(team);
     sizes[index] = 1;
     players[index] = &player;
 
 }
+*/
+void UnionFind::AddPlayer(Player player) {
+    //if (currSize == maxSize){
 
-void UnionFind::AddPlayer(Player player, Team* team) {
-    if (currSize == maxSize){
-
-    }
+    //}
+    players.insert(player);
+    /*
     int index = hash(player.getId());
     Player* father = team->getRootPlayer();
     player.setFather(father);
     sizes[index]++;
-    players[index] = &player;
+    players[index] = &player;*/
 }
 
 Team *UnionFind::FindTeam(int playerid) {
+
+    Player* root = findRoot(playerid);
+    return root->getTeam();
+
+    /*
     int index = hash(playerid);
     //check if exist
     Player* currPlayer = players[index];
@@ -43,7 +51,7 @@ Team *UnionFind::FindTeam(int playerid) {
         currPlayer->setFather(root);
     }
     return root->getTeam();
-
+*/
 }
 
 void UnionFind::Unite(int playerid1, int playerid2) {
@@ -64,21 +72,38 @@ void UnionFind::Unite(int playerid1, int playerid2) {
 }
 
 bool UnionFind::doesExist(int playerId) {
-    int index = hash(playerId);
+    return players.doesExist(playerId);
+    /*int index = hash(playerId);
     Player* temp = dynamic_cast<Player*>(players[index]);
     if (temp == nullptr){
         return false;
     }
-    return true;
+    return true;*/
 }
 
 Player* UnionFind::getPlayer(int playerId) {
+    return players.getPlayer(playerId);
+    /*
     int index = hash(playerId);
     Player* temp = players[index];
-    return temp;
-}
+    return temp;*/
+     }
 
 Player *UnionFind::findRoot(int playerId) {
+    if (!players.doesExist(playerId)){
+        return nullptr;
+    }
+    Player* currPlayer = players.getPlayer(playerId);
+    while (currPlayer->getFather()){
+        currPlayer = currPlayer->getFather();
+    }
+    Player* root = currPlayer;
+    currPlayer = players.getPlayer(playerId);
+    while (currPlayer->getFather()){
+        currPlayer->setFather(root);
+    }
+    return root;
+    /*
     int index = hash(playerId);
     //check if exist
     Player* currPlayer = players[index];
@@ -91,5 +116,6 @@ Player *UnionFind::findRoot(int playerId) {
         currPlayer->setFather(root);
     }
     return root;
+     */
 }
 

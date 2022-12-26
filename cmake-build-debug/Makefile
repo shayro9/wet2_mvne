@@ -128,6 +128,30 @@ wet2_mvne/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/build
 .PHONY : wet2_mvne/fast
 
+DynamicHash.obj: DynamicHash.cpp.obj
+.PHONY : DynamicHash.obj
+
+# target to build an object file
+DynamicHash.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.obj
+.PHONY : DynamicHash.cpp.obj
+
+DynamicHash.i: DynamicHash.cpp.i
+.PHONY : DynamicHash.i
+
+# target to preprocess a source file
+DynamicHash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.i
+.PHONY : DynamicHash.cpp.i
+
+DynamicHash.s: DynamicHash.cpp.s
+.PHONY : DynamicHash.s
+
+# target to generate assembly for a file
+DynamicHash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.s
+.PHONY : DynamicHash.cpp.s
+
 Player.obj: Player.cpp.obj
 .PHONY : Player.obj
 
@@ -257,6 +281,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... wet2_mvne
+	@echo ... DynamicHash.obj
+	@echo ... DynamicHash.i
+	@echo ... DynamicHash.s
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s

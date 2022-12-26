@@ -60,6 +60,10 @@ Player *Team::getRootPlayer() {
     return m_rootPlayer;
 }
 
+void Team::addPlayers(int amount) {
+    m_numOfPlayers += amount;
+}
+
 
 bool operator> (const Team& t1, const Team& t2){
     return t2 < t1;

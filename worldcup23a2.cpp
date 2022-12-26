@@ -86,8 +86,30 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     if (goalKeeper){
         currTeam->makeValid();
     }
+    players.AddPlayer(new_player);
     if (currTeam->getRootPlayer()){
-        players.AddPlayer(new_player, currTeam);
+        Player* root = currTeam->getRootPlayer();
+        new_player.setFather(root);
+    }
+    else{
+        new_player.setTeam(currTeam);
+        currTeam->setRootPlayer(&new_player);
+    }
+    currTeam->addAbility(ability);
+    currTeam->addPlayers(1);
+    currTeam->getTeamAbilityPointer()->addAbility(ability);
+
+
+
+/*
+    Team* currTeam = &teamsTree.find(teamId)->data;
+    Player new_player = Player(playerId, teamId, spirit, gamesPlayed, ability, cards, goalKeeper);
+    new_player.setTeamPlayedBefore(currTeam->getTeamPlayed());
+    if (goalKeeper){
+        currTeam->makeValid();
+    }
+    if (currTeam->getRootPlayer()){
+        players.AddPlayer(new_player);
     }
     else{
         players.AddFirstPlayer(new_player, currTeam);
@@ -95,8 +117,9 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
         new_player.setTeam(currTeam);
     }
     currTeam->addAbility(ability);
+    currTeam->addPlayers(1);
     currTeam->getTeamAbilityPointer()->addAbility(ability);
-
+*/
 	return StatusType::SUCCESS;
 }
 

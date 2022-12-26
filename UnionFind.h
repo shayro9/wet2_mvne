@@ -8,19 +8,21 @@
 #endif //WET2_MVNE_UNIONFIND_H
 
 #include "Player.h"
+#include "DynamicHash.h"
 
 class UnionFind{
-    Player** players;
-    int* sizes;
-    int maxSize;
-    int currSize;
+    DynamicHash players;
+  //  Player** players;
+   // int* sizes;
+ //   int maxSize;
+  //  int currSize;
 
 
 public:
     UnionFind();
     ~UnionFind();
-    void AddFirstPlayer(Player player, Team* team);     //create new set
-    void AddPlayer(Player player, Team* team);          //add player to existing set
+   // void AddFirstPlayer(Player player, Team* team);     //create new set
+    void AddPlayer(Player player);          //add player to existing set
     Team* FindTeam(int playerid);
     Player* findRoot(int playerId);
     void Unite(int playerid1, int playerid2);
