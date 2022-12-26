@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/DynamicHash.cpp">
+			<Option target="wet2_mvne"/>
+		</Unit>
+		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/DynamicHash.h">
+			<Option target="wet2_mvne"/>
+		</Unit>
+		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/List.h">
+			<Option target="wet2_mvne"/>
+		</Unit>
 		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Player.cpp">
 			<Option target="wet2_mvne"/>
 		</Unit>

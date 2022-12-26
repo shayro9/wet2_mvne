@@ -19,6 +19,7 @@ class Team{
     TeamAbility* m_teamAbility;
     bool m_isValid;
     int m_gamesPlayed;
+    int m_numOfPlayers;
 
 
 
@@ -35,6 +36,7 @@ public:
     int getPoints();
     int getAbility();
     int getTeamPlayed();
+    void addPlayers(int amount);
 
     friend bool operator== (const Team&, const Team&);
     friend bool operator< (const Team&, const Team&);
