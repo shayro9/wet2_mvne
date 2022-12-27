@@ -1,10 +1,6 @@
 #include "worldcup23a2.h"
 
 
-
-
-
-
 world_cup_t::world_cup_t(): teamsTree(RankTree<Team>()), teamsAbilityTree(RankTree<TeamAbility>()), players(UnionFind())
 {
 	// TODO: Your code goes here
@@ -52,11 +48,11 @@ StatusType world_cup_t::remove_team(int teamId)
     }
     try
     {
-        Player* root = &teamsTree.find(teamId)->data->getRootPlayer();
+        Player* root = teamsTree.find(teamId)->data.getRootPlayer();
         root->setTeamPlayed(to_remove->getTeamPlayed());
         root->setTeam(nullptr);
-        teamsAbilityTree.remove(to_remove->getTeamAbilityPointer());
-        teamsTree.remove(to_remove);
+        teamsAbilityTree.remove(*to_remove->getTeamAbilityPointer());
+        teamsTree.remove(*to_remove);
     }
     catch (...)
     {
@@ -150,6 +146,10 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
 
 
     }
+    catch ( ... )
+    {
+
+    }
 	return StatusType::SUCCESS;
 }
 
@@ -170,11 +170,11 @@ output_t<int> world_cup_t::num_played_games_for_player(int playerId)
         int teamPlayedBefore = currPlayer->getTeamPlayedBefore();
         if (currRoot->getTeam()){ // if team exist
             int teamPlayed = currRoot->getTeam()->getTeamPlayed();
-            return gamesPlayed + teamPlayed - teamPlayedBefore;
+            return gamesPlayed + teamPlayed + currRoot->getGamesPlayed() - teamPlayedBefore;
         }
         else{
             int teamPlayed = currRoot->getTeamPlayed();
-            return gamesPlayed + teamPlayed - teamPlayedBefore;
+            return gamesPlayed + teamPlayed + currRoot->getGamesPlayed() - teamPlayedBefore;
         }
     }
     catch (...)
@@ -240,7 +240,7 @@ output_t<int> world_cup_t::get_team_points(int teamId)
     }
     try
     {
-        Team* currTeam = teamsTree.find(teamId);
+        Team* currTeam = &teamsTree.find(teamId)->data;
         return currTeam->getPoints();
     }
     catch (...)

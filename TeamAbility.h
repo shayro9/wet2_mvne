@@ -16,6 +16,7 @@ class TeamAbility{
 
 public:
     TeamAbility(int teamid);
+    TeamAbility() = default;
     ~TeamAbility();
     void addAbility(int amount);
 

@@ -25,6 +25,7 @@ class Team{
 
 public:
     Team(int teamId);
+    Team() = default;
     ~Team();
     Player* getRootPlayer();
     void setRootPlayer(Player* player);

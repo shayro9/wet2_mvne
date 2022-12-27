@@ -94,13 +94,21 @@ Player *UnionFind::findRoot(int playerId) {
         return nullptr;
     }
     Player* currPlayer = players.getPlayer(playerId);
+    int sum_team_played_before = 0;
     while (currPlayer->getFather()){
         currPlayer = currPlayer->getFather();
+        sum_team_played_before += currPlayer->getTeamPlayed();
     }
     Player* root = currPlayer;
+    int new_games_played_before = currPlayer->getGamesPlayed() - sum_team_played_before;
     currPlayer = players.getPlayer(playerId);
     while (currPlayer->getFather()){
+        currPlayer->setTeamPlayedBefore(new_games_played_before);
+        currPlayer->setTeamPlayed(0);
+        new_games_played_before -= currPlayer->getTeamPlayed();
+        Player* temp = currPlayer->getFather();
         currPlayer->setFather(root);
+        currPlayer = temp;
     }
     return root;
     /*
