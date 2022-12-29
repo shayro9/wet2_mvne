@@ -12,10 +12,11 @@ void Player::setTeam(Team* team) {
 }
 
 Player::Player(int playerId, int teamId, const permutation_t &spirit, int gamesPlayed, int ability, int cards,
-               bool goalKeeper): m_playerId(playerId), m_teamId(teamId), m_spirit(spirit), m_gamesPlayed(gamesPlayed), m_ability(ability), m_cards(cards), m_goalKeeper(goalKeeper),
-               m_team(nullptr), m_father(nullptr), m_teamPlayed(0), m_teamPlayedBefore(0){
-
-}
+               bool goalKeeper): m_playerId(playerId), m_teamId(teamId),
+               m_gamesPlayed(gamesPlayed), m_ability(ability), m_cards(cards), m_goalKeeper(goalKeeper),
+               m_team(nullptr), m_father(nullptr), m_teamPlayed(0), m_teamPlayedBefore(0),
+               m_spirit(&spirit), m_sum_spirit(spirit), m_prev_spirit(nullptr)
+{}
 
 void Player::setFather(Player *player) {
     m_father = player;
@@ -56,4 +57,28 @@ void Player::addCards(int amount) {
 int Player::getCards() {
     return m_cards;
 }
+
+permutation_t Player::getSpirit() {
+    return *m_spirit;
+}
+
+permutation_t Player::getSpiritSum() {
+    return m_sum_spirit;
+}
+
+void Player::setPrevSpirits(const permutation_t &sum_prev_spirits) {
+    delete(m_prev_spirit);
+    m_prev_spirit = new permutation_t(sum_prev_spirits);
+}
+
+void Player::increaseSpiritSum(const permutation_t &sons_spirit) {
+    permutation_t* temp = new permutation_t(m_sum_spirit * sons_spirit);
+    m_sum_spirit = permutation_t(*temp);
+    delete(temp);
+}
+
+permutation_t Player::getPrevSpirit() {
+    return *m_prev_spirit;
+}
+
 

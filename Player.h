@@ -1,4 +1,4 @@
-//
+ //
 // Created by amida on 24/12/2022.
 //
 
@@ -23,7 +23,11 @@ class Player{
     Team* m_team;
     Player* m_father;
     int extra;
-    const permutation_t& m_spirit;
+
+    const permutation_t* m_spirit;
+    permutation_t m_sum_spirit;
+    permutation_t* m_prev_spirit;
+
 
 
 
@@ -37,6 +41,12 @@ public:
     void setFather(Player* player);
     void setTeamPlayedBefore(int num);
     void setTeamPlayed(int num);
+    void setPrevSpirits(const permutation_t &sum_prev_spirits);
+    void increaseSpiritSum(const permutation_t &sons_spirit);
+
+    permutation_t getSpirit();
+    permutation_t getSpiritSum();
+    permutation_t getPrevSpirit();
     void addCards(int amount);
     Player* getFather();
     Team* getTeam();
