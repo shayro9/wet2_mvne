@@ -5,7 +5,6 @@
 #ifndef WET2_MVNE_TEAM_H
 #define WET2_MVNE_TEAM_H
 
-#endif //WET2_MVNE_TEAM_H
 //#include "Player.h"
 #include "TeamAbility.h"
 
@@ -26,7 +25,7 @@ class Team{
 public:
     Team(int teamId);
     Team() = default;
-    ~Team();
+    ~Team() = default;
     Player* getRootPlayer();
     void setRootPlayer(Player* player);
     void addAbility(int amount);
@@ -51,3 +50,5 @@ bool operator!= (const Team&, const Team&);
 bool operator>= (const Team&, const Team&);
 bool operator> (const Team&, const Team&);
 bool operator<= (const Team&, const Team&);
+
+#endif //WET2_MVNE_TEAM_H

@@ -5,8 +5,6 @@
 #ifndef WET2_MVNE_UNIONFIND_H
 #define WET2_MVNE_UNIONFIND_H
 
-#endif //WET2_MVNE_UNIONFIND_H
-
 #include "Player.h"
 #include "DynamicHash.h"
 
@@ -20,7 +18,7 @@ class UnionFind{
 
 public:
     UnionFind();
-    ~UnionFind();
+    ~UnionFind() = default;
    // void AddFirstPlayer(Player player, Team* team);     //create new set
     void AddPlayer(Player player);          //add player to existing set
     Team* FindTeam(int playerid);
@@ -31,3 +29,5 @@ public:
 
 
 };
+
+#endif //WET2_MVNE_UNIONFIND_H

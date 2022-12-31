@@ -60,5 +60,9 @@ bool DynamicHash::doesExist(int id) {
     return true;
 }
 
+DynamicHash::~DynamicHash() {
+    delete[] m_playersArray;
+}
+
 
 
