@@ -1,7 +1,7 @@
 #include "worldcup23a2.h"
 
 
-world_cup_t::world_cup_t(): teamsTree(RankTree<Team>()), teamsAbilityTree(RankTree<TeamAbility>()), players(UnionFind())
+world_cup_t::world_cup_t(): teamsTree(RankTree<Team>()), teamsAbilityTree(RankTree<TeamAbility>()), players(UnionFind()), numOfTeams(0)
 {
 	// TODO: Your code goes here
 }
@@ -32,6 +32,7 @@ StatusType world_cup_t::add_team(int teamId)
 
         delete new_team;
         delete new_teamAbility;
+        numOfTeams++;
     }
     catch (...)
     {
@@ -57,6 +58,7 @@ StatusType world_cup_t::remove_team(int teamId)
         root->setTeam(nullptr);
         teamsAbilityTree.remove(*to_remove->data.getTeamAbilityPointer());
         teamsTree.remove(to_remove->data);
+        numOfTeams--;
     }
     catch (...)
     {
@@ -264,6 +266,11 @@ output_t<int> world_cup_t::get_team_points(int teamId)
 output_t<int> world_cup_t::get_ith_pointless_ability(int i)
 {
 	// TODO: Your code goes here
+    if (numOfTeams = 0 || i < 0 || i >= numOfTeams){
+        return StatusType::FAILURE;
+    }
+    node<TeamAbility>* temp = teamsAbilityTree.select(i);
+    return temp->data.getId();
 	return 12345;
 }
 

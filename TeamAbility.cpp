@@ -35,6 +35,10 @@ void TeamAbility::addAbility(int amount) {
     m_abilitySum += amount;
 }
 
+int TeamAbility::getId() {
+    return m_teamId;
+}
+
 bool operator!=(const TeamAbility &team1, const TeamAbility &team2) {
     return !(team1 == team2);
 }

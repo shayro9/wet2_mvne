@@ -16,6 +16,7 @@ public:
     TeamAbility() = default;
     ~TeamAbility() = default;
     void addAbility(int amount);
+    int getId();
 
     friend bool operator== (const TeamAbility&, const TeamAbility&);
     friend bool operator< (const TeamAbility&, const TeamAbility&);

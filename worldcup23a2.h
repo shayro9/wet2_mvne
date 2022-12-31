@@ -27,6 +27,7 @@ private:
     RankTree<Team> teamsTree;
     RankTree<TeamAbility> teamsAbilityTree;
     UnionFind players;
+    int numOfTeams;
 
 	
 public:

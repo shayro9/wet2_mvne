@@ -334,19 +334,38 @@ int RankTree<T>::nodesOf(node<T> *n) {
 
 template<class T>
 node<T>* RankTree<T>::select(int i) {
-    return selectRec(m_root,i);
+    return selectRec(m_root,i+1);
 }
 
 template<class T>
 node<T> *RankTree<T>::selectRec(node<T> *root, int i) {
+/*
+    if (nodesOf(root->l) == i){
+        return root;
+    }
+    if (nodesOf(root->l) > i){
+        return selectRec(root->l, i);
+    }
+*/
+
+  //  if (!root->l && !root->r){
+  //      return root;
+//    }
+   // i = i+1;
     if(nodesOf(root->l) == i-1)
         return root;
 
     if(nodesOf(root->l) > i-1)
         return selectRec(root->l, i);
 
-    if(nodesOf(root->l) < i-1)
+
+  //  if(nodesOf(root->l) < i-1)
+     //   return selectRec(root->r, i - nodesOf(root->l) - 1);
+
+    else{
         return selectRec(root->r, i - nodesOf(root->l) - 1);
+
+    }
 }
 
 #endif //WET2_MVNE_RANKTREE_H

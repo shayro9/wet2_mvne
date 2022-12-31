@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj.d"
   "CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj"
   "CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj.d"
+  "CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj"
+  "CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj.d"
   "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj"
   "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj.d"
   "libwet2_mvne.dll.a"
