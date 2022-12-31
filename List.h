@@ -137,11 +137,13 @@ LNode<T> *List<T>::getLastAdded() {
 
 template<class T>
 void List<T>::append(T& data) {
-    m_last_added = new LNode<T>();
-    m_last_added->m_data = &data;
-    m_tail->m_next = m_last_added;
-    m_last_added->m_prev = m_tail;
-    m_tail = m_last_added;
+    LNode<T>* temp = new LNode<T>();
+    temp->m_data = &data;
+    temp->m_next = nullptr;
+    if(m_tail != nullptr)
+        m_tail->m_next = temp;
+    temp->m_prev = m_tail;
+    m_tail = temp;
     m_size++;
 }
 
