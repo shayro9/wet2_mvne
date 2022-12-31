@@ -4,7 +4,7 @@
 #include "UnionFind.h"
 #define X 2
 
-UnionFind::UnionFind(): players(DynamicHash()), sizes(new int[X]), currSize(0), maxSize(X) {
+UnionFind::UnionFind(): players(DynamicHash()) {
 
 }
 /*
@@ -55,7 +55,10 @@ Team *UnionFind::FindTeam(int playerid) {
 }
 
 void UnionFind::Unite(int playerid1, int playerid2) {
-    int index1 = hash(playerid1);
+
+
+
+  /*  int index1 = hash(playerid1);
     int index2 = hash(playerid2);
     Player* root1 = players[playerid1];
     Player* root2 = players[playerid2];
@@ -68,7 +71,7 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         root1->setTeam(nullptr);
         root1->setFather(root2);
         sizes[index2] += sizes[index1];
-    }
+    }*/
 }
 
 bool UnionFind::doesExist(int playerId) {

@@ -39,7 +39,7 @@ void DynamicHash::insert(Player player) {
         }
         catch (...)
         {
-            delete[] new_playersArray;
+            //delete[] new_playersArray;
             //add
         }
     }
