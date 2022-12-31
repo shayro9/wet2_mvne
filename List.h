@@ -142,6 +142,8 @@ void List<T>::append(T& data) {
     temp->m_next = nullptr;
     if(m_tail != nullptr)
         m_tail->m_next = temp;
+    else
+        m_head = temp;
     temp->m_prev = m_tail;
     m_tail = temp;
     m_size++;
