@@ -118,6 +118,25 @@ CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/List.h
 
 CMakeFiles/wet2_mvne.dir/Player.cpp.obj
@@ -236,6 +255,25 @@ CMakeFiles/wet2_mvne.dir/Player.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
 
 CMakeFiles/wet2_mvne.dir/Team.cpp.obj
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Team.cpp
@@ -363,11 +401,30 @@ CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/DynamicHash.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/List.h
 
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj
- C:/Users/amida/CLionProjects/untitled1/wet2_mvne/temp_main.cpp
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj
+ C:/Users/amida/CLionProjects/untitled1/wet2_mvne/main23a2.cpp
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/worldcup23a2.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/wet2util.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept
@@ -480,6 +537,25 @@ CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/RankTree.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Team.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/TeamAbility.h
@@ -487,6 +563,9 @@ CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Player.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/DynamicHash.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/List.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
 
 CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/worldcup23a2.cpp
@@ -602,6 +681,25 @@ CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc
+ C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/RankTree.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/Team.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/TeamAbility.h

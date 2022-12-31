@@ -1,9 +1,6 @@
-CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj: \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\UnionFind.cpp \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\UnionFind.h \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\Player.h \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\Team.h \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\TeamAbility.h \
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\main23a2.cpp \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\worldcup23a2.h \
  C:\Users\amida\CLionProjects\untitled1\wet2_mvne\wet2util.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/exception \
@@ -134,5 +131,13 @@ CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\RankTree.h \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\Team.h \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\TeamAbility.h \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\UnionFind.h \
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\Player.h \
  C:\Users\amida\CLionProjects\untitled1\wet2_mvne\DynamicHash.h \
- C:\Users\amida\CLionProjects\untitled1\wet2_mvne\List.h
+ C:\Users\amida\CLionProjects\untitled1\wet2_mvne\List.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc

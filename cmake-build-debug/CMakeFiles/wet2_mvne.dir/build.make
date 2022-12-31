@@ -158,20 +158,20 @@ CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\amida\CLionProjects\untitled1\wet2_mvne\DynamicHash.cpp -o CMakeFiles\wet2_mvne.dir\DynamicHash.cpp.s
 
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj: CMakeFiles/wet2_mvne.dir/flags.make
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj: CMakeFiles/wet2_mvne.dir/includes_CXX.rsp
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj: ../temp_main.cpp
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj: CMakeFiles/wet2_mvne.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\amida\CLionProjects\untitled1\wet2_mvne\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj -MF CMakeFiles\wet2_mvne.dir\temp_main.cpp.obj.d -o CMakeFiles\wet2_mvne.dir\temp_main.cpp.obj -c C:\Users\amida\CLionProjects\untitled1\wet2_mvne\temp_main.cpp
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: CMakeFiles/wet2_mvne.dir/flags.make
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: CMakeFiles/wet2_mvne.dir/includes_CXX.rsp
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: ../main23a2.cpp
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: CMakeFiles/wet2_mvne.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\amida\CLionProjects\untitled1\wet2_mvne\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj -MF CMakeFiles\wet2_mvne.dir\main23a2.cpp.obj.d -o CMakeFiles\wet2_mvne.dir\main23a2.cpp.obj -c C:\Users\amida\CLionProjects\untitled1\wet2_mvne\main23a2.cpp
 
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wet2_mvne.dir/temp_main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\amida\CLionProjects\untitled1\wet2_mvne\temp_main.cpp > CMakeFiles\wet2_mvne.dir\temp_main.cpp.i
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wet2_mvne.dir/main23a2.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\amida\CLionProjects\untitled1\wet2_mvne\main23a2.cpp > CMakeFiles\wet2_mvne.dir\main23a2.cpp.i
 
-CMakeFiles/wet2_mvne.dir/temp_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wet2_mvne.dir/temp_main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\amida\CLionProjects\untitled1\wet2_mvne\temp_main.cpp -o CMakeFiles\wet2_mvne.dir\temp_main.cpp.s
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wet2_mvne.dir/main23a2.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\amida\CLionProjects\untitled1\wet2_mvne\main23a2.cpp -o CMakeFiles\wet2_mvne.dir\main23a2.cpp.s
 
 # Object files for target wet2_mvne
 wet2_mvne_OBJECTS = \
@@ -181,7 +181,7 @@ wet2_mvne_OBJECTS = \
 "CMakeFiles/wet2_mvne.dir/Team.cpp.obj" \
 "CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj" \
 "CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.obj" \
-"CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj"
+"CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj"
 
 # External object files for target wet2_mvne
 wet2_mvne_EXTERNAL_OBJECTS =
@@ -192,7 +192,7 @@ wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/Player.cpp.obj
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/Team.cpp.obj
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/TeamAbility.cpp.obj
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/DynamicHash.cpp.obj
-wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj
+wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/build.make
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/linklibs.rsp
 wet2_mvne.exe: CMakeFiles/wet2_mvne.dir/objects1.rsp

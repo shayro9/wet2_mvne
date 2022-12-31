@@ -17,7 +17,9 @@ int main(){
 
     int b[5] = {0, 1, 2, 3, 4};
     int x = test.get_ith_pointless_ability(4).ans();
-    //test.remove_team(2);
+    test.remove_team(2);
+
+
     test.add_player(30, 3, permutation_t(b), 6, 5, 5, true);
     int y = test.get_player_cards(10).ans();
     int y2 = test.get_player_cards(30).ans();
