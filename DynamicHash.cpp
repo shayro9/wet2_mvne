@@ -30,7 +30,7 @@ void DynamicHash::insert(Player& player) {
                 LNode<Player>* iter = m_playersArray[i].getHead();
                 while (iter){
                     Player* temp = iter->m_data;
-                    new_playersArray[hashFunc(temp->getId())].append(*temp);
+                    new_playersArray[hashFunc(temp->getId())].append(player);
                     iter = iter->m_next;
                 }
             }
