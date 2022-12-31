@@ -9,7 +9,7 @@ int DynamicHash::hashFunc(int playerId) {
 
 Player *DynamicHash::getPlayer(int playerId) {
     int index = hashFunc(playerId);
-    LNode<Player>* iter = m_playersArray->getHead();
+    LNode<Player>* iter = m_playersArray[index].getHead();
     while (iter){
         if (iter->m_data->getId() == playerId){
             return iter->m_data;
@@ -30,7 +30,7 @@ void DynamicHash::insert(Player &player) {
                 LNode<Player>* iter = m_playersArray[i].getHead();
                 while (iter){
                     Player* temp = iter->m_data;
-                    new_playersArray[hashFunc(temp->getId())].append(player);
+                    new_playersArray[hashFunc(temp->getId())].append(*temp);
                     iter = iter->m_next;
                 }
             }

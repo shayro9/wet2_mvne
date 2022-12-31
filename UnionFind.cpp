@@ -101,7 +101,8 @@ Player *UnionFind::findRoot(int playerId) {
         currPlayer = currPlayer->getFather();
         sum_team_played_before += currPlayer->getTeamPlayed();
 
-        route_spirit_sum = permutation_t(route_spirit_sum * currPlayer->getPrevSpirit());
+       // route_spirit_sum = permutation_t(route_spirit_sum * currPlayer->getPrevSpirit());
+        route_spirit_sum = route_spirit_sum * currPlayer->getPrevSpirit();
     }
     Player* root = currPlayer;
     int new_games_played_before = currPlayer->getGamesPlayed() - sum_team_played_before;

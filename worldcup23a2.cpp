@@ -225,7 +225,7 @@ output_t<int> world_cup_t::get_player_cards(int playerId)
     if (playerId<=0){
         return StatusType::INVALID_INPUT;
     }
-    if (players.doesExist(playerId)){
+    if (!players.doesExist(playerId)){
         return StatusType::FAILURE;
     }
     try
