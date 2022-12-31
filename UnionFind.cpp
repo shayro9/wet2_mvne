@@ -55,10 +55,8 @@ Team *UnionFind::FindTeam(int playerid) {
 }
 
 void UnionFind::Unite(int playerid1, int playerid2) {
-
-
-
-  /*  int index1 = hash(playerid1);
+    /*
+    int index1 = hash(playerid1);
     int index2 = hash(playerid2);
     Player* root1 = players[playerid1];
     Player* root2 = players[playerid2];

@@ -23,11 +23,15 @@ StatusType world_cup_t::add_team(int teamId)
     }
     try
     {
-        Team new_team = Team(teamId);
-        TeamAbility new_teamAbility = TeamAbility(teamId);
-        new_team.SetTeamAbilityPointer(&new_teamAbility);
-        teamsTree.insert(new_team);
-        teamsAbilityTree.insert(new_teamAbility);
+        Team* new_team = new Team(teamId);
+        TeamAbility* new_teamAbility = new TeamAbility(teamId);
+
+        teamsAbilityTree.insert(*new_teamAbility);
+        new_team->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_teamAbility)->data);
+        teamsTree.insert(*new_team);
+
+        delete new_team;
+        delete new_teamAbility;
     }
     catch (...)
     {
@@ -278,24 +282,5 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 {
 	// TODO: Your code goes here
-    if (teamId2 == teamId1 || teamId2 < 0 || teamId1 < 0){ //  < or <=
-        return StatusType::INVALID_INPUT;
-    }
-    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
-        return StatusType::FAILURE;
-    }
-    try
-    {
-        Team buyerTeam = teamsTree.find(teamId1)->data;
-        Team boughtTeam = teamsTree.find(teamId2)->data;
-        Player* buyerRoot = buyerTeam.getRootPlayer();
-        Player* boughtRoot = boughtTeam.getRootPlayer();
-
-
-    }
-    catch (...)
-    {
-        return StatusType::ALLOCATION_ERROR;
-    }
 	return StatusType::SUCCESS;
 }

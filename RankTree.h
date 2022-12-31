@@ -265,6 +265,8 @@ node<T> *RankTree<T>::removeNode(node<T> *root, const T &t) {
             delete (root);
             root = min_son;
         }
+        temp_parent->height = max(height(root->r), height(root->l)) + 1;
+        temp_parent->nodes = nodesOf(root->l) + nodesOf(root->r) + 1;
     }
     int h = 0, new_h = -1;
     while(h != new_h)

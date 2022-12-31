@@ -21,7 +21,7 @@ Player *DynamicHash::getPlayer(int playerId) {
     return nullptr;
 }
 
-void DynamicHash::insert(Player& player) {
+void DynamicHash::insert(Player &player) {
     if (m_tableSize == m_currSize + 1){
         try
         {
