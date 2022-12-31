@@ -11,7 +11,7 @@ int main(){
 
 
     for (int i = 0; i < 20; ++i) {
-        int a[5] = {i%5+1,((i+1)%5)+1,((i+2)%5)+1,((i+3)%5)+1,((i+4)%5)+1};
+        int a[5] = {i%5,(i+1)%5,(i+2)%5,(i+3)%5,(i+4)%5};
         test.add_player(i,i%5 + 1,permutation_t(a),i*7,i*i,4*i, false);
     }
     return 0;
