@@ -5,8 +5,6 @@
 #ifndef WET2_MVNE_PLAYER_H
 #define WET2_MVNE_PLAYER_H
 
-#endif //WET2_MVNE_PLAYER_H
-
 #include "Team.h"
 #include "wet2util.h"
 
@@ -35,7 +33,7 @@ public:
     Player(int playerId, int teamId,
            const permutation_t &spirit, int gamesPlayed,
            int ability, int cards, bool goalKeeper);
-    ~Player();
+    ~Player() = default;
     int getId();
     void setTeam(Team* team);
     void setFather(Player* player);
@@ -55,3 +53,5 @@ public:
     int getTeamPlayed();
     int getCards();
 };
+
+#endif //WET2_MVNE_PLAYER_H

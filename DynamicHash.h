@@ -5,7 +5,6 @@
 #ifndef WET2_MVNE_DYNAMICHASH_H
 #define WET2_MVNE_DYNAMICHASH_H
 
-#endif //WET2_MVNE_DYNAMICHASH_H
 #include "Player.h"
 #include "List.h"
 
@@ -19,6 +18,7 @@ class DynamicHash{
 
 public:
     DynamicHash();
+    ~DynamicHash();
     int hashFunc(int num);
     Player* getPlayer(int num);
     void insert(Player player);
@@ -28,4 +28,4 @@ public:
 
 };
 
-
+#endif //WET2_MVNE_DYNAMICHASH_H

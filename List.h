@@ -5,8 +5,6 @@
 #ifndef WET2_MVNE_LIST_H
 #define WET2_MVNE_LIST_H
 
-#endif //WET2_MVNE_LIST_H
-
 template<class T>
 struct LNode {
     T* m_data;
@@ -151,3 +149,5 @@ template<class T>
 int List<T>::getSize() {
     return m_size;
 }
+
+#endif //WET2_MVNE_LIST_H

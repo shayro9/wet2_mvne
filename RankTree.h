@@ -5,8 +5,6 @@
 #ifndef WET2_MVNE_RANKTREE_H
 #define WET2_MVNE_RANKTREE_H
 
-#endif //WET2_MVNE_RANKTREE_H
-
 template <class T>
 struct node{
     T data;
@@ -55,7 +53,7 @@ private:
     node<T>* selectRec(node<T>* root, int i);
 };
 
-int max(int a, int b) {
+static int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
@@ -348,3 +346,5 @@ node<T> *RankTree<T>::selectRec(node<T> *root, int i) {
     if(nodesOf(root->l) < i-1)
         return selectRec(root->r, i - nodesOf(root->l) - 1);
 }
+
+#endif //WET2_MVNE_RANKTREE_H

@@ -5,9 +5,6 @@
 #ifndef WET2_MVNE_TEAMABILITY_H
 #define WET2_MVNE_TEAMABILITY_H
 
-#endif //WET2_MVNE_TEAMABILITY_H
-
-
 class TeamAbility{
 
     int m_teamId;
@@ -17,7 +14,7 @@ class TeamAbility{
 public:
     TeamAbility(int teamid);
     TeamAbility() = default;
-    ~TeamAbility();
+    ~TeamAbility() = default;
     void addAbility(int amount);
 
     friend bool operator== (const TeamAbility&, const TeamAbility&);
@@ -29,3 +26,5 @@ bool operator!= (const TeamAbility&, const TeamAbility&);
 bool operator> (const TeamAbility&, const TeamAbility&);
 bool operator<= (const TeamAbility&, const TeamAbility&);
 bool operator>= (const TeamAbility&, const TeamAbility&);
+
+#endif //WET2_MVNE_TEAMABILITY_H

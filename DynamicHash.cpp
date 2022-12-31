@@ -39,7 +39,7 @@ void DynamicHash::insert(Player player) {
         }
         catch (...)
         {
-            delete[] new_playersArray;
+            //delete[] new_playersArray;
             //add
         }
     }
@@ -58,6 +58,10 @@ bool DynamicHash::doesExist(int id) {
         return false;
     }
     return true;
+}
+
+DynamicHash::~DynamicHash() {
+    delete[] m_playersArray;
 }
 
 
