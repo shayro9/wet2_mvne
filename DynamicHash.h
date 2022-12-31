@@ -21,7 +21,7 @@ public:
     ~DynamicHash();
     int hashFunc(int num);
     Player* getPlayer(int num);
-    void insert(Player player);
+    void insert(Player& player);
     bool doesExist(int id);
 
 

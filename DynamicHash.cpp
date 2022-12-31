@@ -21,16 +21,17 @@ Player *DynamicHash::getPlayer(int playerId) {
     return nullptr;
 }
 
-void DynamicHash::insert(Player player) {
+void DynamicHash::insert(Player &player) {
     if (m_tableSize == m_currSize + 1){
         try
         {
             List<Player>* new_playersArray = new List<Player>[m_tableSize*2];
-            for (int i = 0; i <= m_tableSize; i++){
+            for (int i = 0; i < m_tableSize; i++){
                 LNode<Player>* iter = m_playersArray[i].getHead();
                 while (iter){
                     Player* temp = iter->m_data;
-                    new_playersArray[hashFunc(temp->getId())].append(player);
+                    new_playersArray[hashFunc(temp->getId())].append(*temp);
+                    iter = iter->m_next;
                 }
             }
             delete[] m_playersArray;
@@ -44,7 +45,7 @@ void DynamicHash::insert(Player player) {
         }
     }
     int index = hashFunc(player.getId());
-    m_playersArray->append(player);
+    m_playersArray[index].append(player);
     m_currSize++;
 }
 

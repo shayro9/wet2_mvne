@@ -20,7 +20,7 @@ void UnionFind::AddFirstPlayer(Player player, Team* team) {
 
 }
 */
-void UnionFind::AddPlayer(Player player) {
+void UnionFind::AddPlayer(Player& player) {
     //if (currSize == maxSize){
 
     //}
