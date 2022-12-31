@@ -23,11 +23,15 @@ StatusType world_cup_t::add_team(int teamId)
     }
     try
     {
-        Team new_team = Team(teamId);
-        TeamAbility new_teamAbility = TeamAbility(teamId);
-        new_team.SetTeamAbilityPointer(&new_teamAbility);
-        teamsTree.insert(new_team);
-        teamsAbilityTree.insert(new_teamAbility);
+        Team* new_team = new Team(teamId);
+        TeamAbility* new_teamAbility = new TeamAbility(teamId);
+
+        teamsAbilityTree.insert(*new_teamAbility);
+        new_team->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_teamAbility)->data);
+        teamsTree.insert(*new_team);
+
+        delete new_team;
+        delete new_teamAbility;
     }
     catch (...)
     {
