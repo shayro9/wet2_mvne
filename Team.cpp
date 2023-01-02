@@ -64,6 +64,11 @@ void Team::addPlayers(int amount) {
     m_numOfPlayers += amount;
 }
 
+void Team::PlayGame(int points) {
+    m_points += points;
+    m_gamesPlayed ++;
+}
+
 
 bool operator> (const Team& t1, const Team& t2){
     return t2 < t1;
