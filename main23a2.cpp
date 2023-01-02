@@ -60,11 +60,11 @@ int main()
             cin >> pid >> tid >> p1 >> d1 >> d2 >> d3 >> b1;
             print(op, obj->add_player(pid, tid, p1, d1, d2, d3, b1));
         }
-     /*   else if (!op.compare("play_match"))
+        else if (!op.compare("play_match"))
         {
             cin >> tid >> tid2;
             print(op, obj->play_match(tid, tid2));
-        }*/
+        }
         else if(!op.compare("num_played_games_for_player"))
         {
             cin >> pid;
