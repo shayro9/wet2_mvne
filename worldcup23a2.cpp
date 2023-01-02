@@ -54,20 +54,22 @@ StatusType world_cup_t::remove_team(int teamId)
     try
     {
         Player* root = to_remove->data.getRootPlayer();
-        if(root) {
+        if (root){
             root->setTeamPlayed(to_remove->data.getTeamPlayed());
             root->setTeam(nullptr);
         }
+
         teamsAbilityTree.remove(*to_remove->data.getTeamAbilityPointer());
         teamsTree.remove(to_remove->data);
         numOfTeams--;
+        return StatusType::SUCCESS;
     }
     catch (...)
     {
         return StatusType::ALLOCATION_ERROR;
     }
 
-    return StatusType::SUCCESS;
+    return StatusType::FAILURE;
 }
 
 StatusType world_cup_t::add_player(int playerId, int teamId,
@@ -104,8 +106,6 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     else{
         new_player->setTeam(currTeam);
         currTeam->setRootPlayer(new_player);
-
-        new_player->setPrevSpirits(new_player->getSpirit());
     }
 
     currTeam->addAbility(ability);
@@ -152,7 +152,6 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
     {
         Team *team1 = &teamsTree.find(teamId1)->data;
         Team *team2 = &teamsTree.find(teamId2)->data;
-
         int score1 = team1->getPoints() + team1->getAbility();
         int score2 = team2->getPoints() + team2->getAbility();
         if (score1 > score2){
@@ -161,6 +160,8 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
         if (score2 > score1){
             return 3;
         }
+
+
     }
     catch ( ... )
     {
@@ -269,7 +270,7 @@ output_t<int> world_cup_t::get_team_points(int teamId)
 output_t<int> world_cup_t::get_ith_pointless_ability(int i)
 {
 	// TODO: Your code goes here
-    if (numOfTeams == 0 || i < 0 || i >= numOfTeams){
+    if (numOfTeams = 0 || i < 0 || i >= numOfTeams){
         return StatusType::FAILURE;
     }
     node<TeamAbility>* temp = teamsAbilityTree.select(i);
@@ -284,9 +285,9 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
     Player* curr_player = players.getPlayer(playerId);
     Player* root = players.findRoot(playerId);
 
-    if(root == curr_player)
-        return curr_player->getSpirit();
-    return curr_player->getPrevSpirit() * curr_player->getSpirit();
+    permutation_t res = curr_player->getPrevSpirit() * curr_player->getSpirit();
+
+	return res;
 }
 
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
