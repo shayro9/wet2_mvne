@@ -107,7 +107,7 @@ Player *UnionFind::findRoot(int playerId) {
     Player* root = currPlayer;
     int new_games_played_before = currPlayer->getGamesPlayed() - sum_team_played_before;
     currPlayer = players.getPlayer(playerId);
-    while (currPlayer->getFather() != root){
+    while (currPlayer->getFather() != root && currPlayer->getFather() != nullptr){
         currPlayer->setTeamPlayedBefore(new_games_played_before);
         currPlayer->setTeamPlayed(0);
         new_games_played_before -= currPlayer->getTeamPlayed();

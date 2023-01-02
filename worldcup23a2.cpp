@@ -54,11 +54,15 @@ StatusType world_cup_t::remove_team(int teamId)
     try
     {
         Player* root = to_remove->data.getRootPlayer();
-        root->setTeamPlayed(to_remove->data.getTeamPlayed());
-        root->setTeam(nullptr);
+        if (root){
+            root->setTeamPlayed(to_remove->data.getTeamPlayed());
+            root->setTeam(nullptr);
+        }
+
         teamsAbilityTree.remove(*to_remove->data.getTeamAbilityPointer());
         teamsTree.remove(to_remove->data);
         numOfTeams--;
+        return StatusType::SUCCESS;
     }
     catch (...)
     {
