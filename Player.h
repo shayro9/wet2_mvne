@@ -33,7 +33,7 @@ public:
     Player(int playerId, int teamId,
            const permutation_t &spirit, int gamesPlayed,
            int ability, int cards, bool goalKeeper);
-    ~Player() = default; 
+    ~Player() = default;
     int getId();
     void setTeam(Team* team);
     void setFather(Player* player);
