@@ -83,4 +83,8 @@ permutation_t Player::getPrevSpirit() {
     return *m_prev_spirit;
 }
 
+void Player::increaseGamesPlayed(int amount) {
+    m_gamesPlayed += amount;
+}
+
 
