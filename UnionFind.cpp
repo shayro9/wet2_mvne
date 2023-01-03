@@ -36,6 +36,9 @@ void UnionFind::AddPlayer(Player& player) {
 Team *UnionFind::FindTeam(int playerid) {
 
     Player* root = findRoot(playerid);
+    if (!root){
+        return nullptr;
+    }
     return root->getTeam();
 
     /*
@@ -55,6 +58,7 @@ Team *UnionFind::FindTeam(int playerid) {
 }
 
 void UnionFind::Unite(int playerid1, int playerid2) {
+
     /*
     int index1 = hash(playerid1);
     int index2 = hash(playerid2);

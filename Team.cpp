@@ -4,7 +4,7 @@
 #include "Team.h"
 
 Team::Team(int teamId): m_teamId(teamId), m_points(0), m_abilitySum(0), m_rootPlayer(nullptr), m_teamAbility(nullptr), m_isValid(
-        false), m_gamesPlayed(0){
+        false), m_gamesPlayed(0), m_teamSpirit(permutation_t().neutral()){
 
 }
 
@@ -67,6 +67,22 @@ void Team::addPlayers(int amount) {
 void Team::PlayGame(int points) {
     m_points += points;
     m_gamesPlayed ++;
+}
+
+permutation_t Team::getTeamSpirit() {
+    return m_teamSpirit;
+}
+
+void Team::setTeamSpirit(const permutation_t& spirit) {
+    m_teamSpirit = m_teamSpirit * spirit;
+}
+
+void Team::addGamesPlayed(int amount) {
+    m_gamesPlayed += amount;
+}
+
+void Team::addPoints(int amount) {
+    m_points += amount;
 }
 
 

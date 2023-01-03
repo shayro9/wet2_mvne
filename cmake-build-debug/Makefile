@@ -248,29 +248,29 @@ UnionFind.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/UnionFind.cpp.s
 .PHONY : UnionFind.cpp.s
 
-temp_main.obj: temp_main.cpp.obj
-.PHONY : temp_main.obj
+WorldCupTests/UnitTests.obj: WorldCupTests/UnitTests.cpp.obj
+.PHONY : WorldCupTests/UnitTests.obj
 
 # target to build an object file
-temp_main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/temp_main.cpp.obj
-.PHONY : temp_main.cpp.obj
+WorldCupTests/UnitTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/WorldCupTests/UnitTests.cpp.obj
+.PHONY : WorldCupTests/UnitTests.cpp.obj
 
-temp_main.i: temp_main.cpp.i
-.PHONY : temp_main.i
+WorldCupTests/UnitTests.i: WorldCupTests/UnitTests.cpp.i
+.PHONY : WorldCupTests/UnitTests.i
 
 # target to preprocess a source file
-temp_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/temp_main.cpp.i
-.PHONY : temp_main.cpp.i
+WorldCupTests/UnitTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/WorldCupTests/UnitTests.cpp.i
+.PHONY : WorldCupTests/UnitTests.cpp.i
 
-temp_main.s: temp_main.cpp.s
-.PHONY : temp_main.s
+WorldCupTests/UnitTests.s: WorldCupTests/UnitTests.cpp.s
+.PHONY : WorldCupTests/UnitTests.s
 
 # target to generate assembly for a file
-temp_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/temp_main.cpp.s
-.PHONY : temp_main.cpp.s
+WorldCupTests/UnitTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/WorldCupTests/UnitTests.cpp.s
+.PHONY : WorldCupTests/UnitTests.cpp.s
 
 worldcup23a2.obj: worldcup23a2.cpp.obj
 .PHONY : worldcup23a2.obj
@@ -320,9 +320,9 @@ help:
 	@echo ... UnionFind.obj
 	@echo ... UnionFind.i
 	@echo ... UnionFind.s
-	@echo ... temp_main.obj
-	@echo ... temp_main.i
-	@echo ... temp_main.s
+	@echo ... WorldCupTests/UnitTests.obj
+	@echo ... WorldCupTests/UnitTests.i
+	@echo ... WorldCupTests/UnitTests.s
 	@echo ... worldcup23a2.obj
 	@echo ... worldcup23a2.i
 	@echo ... worldcup23a2.s

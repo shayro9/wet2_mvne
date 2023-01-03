@@ -7,6 +7,7 @@
 
 //#include "Player.h"
 #include "TeamAbility.h"
+#include "wet2util.h"
 
 class Player;
 
@@ -19,6 +20,8 @@ class Team{
     bool m_isValid;
     int m_gamesPlayed;
     int m_numOfPlayers;
+    permutation_t m_teamSpirit;
+
 
 
 
@@ -38,6 +41,10 @@ public:
     int getAbility();
     int getTeamPlayed();
     void addPlayers(int amount);
+    permutation_t getTeamSpirit();
+    void setTeamSpirit(const permutation_t& spirit);
+    void addGamesPlayed(int amount);
+    void addPoints(int amount);
 
     friend bool operator== (const Team&, const Team&);
     friend bool operator< (const Team&, const Team&);

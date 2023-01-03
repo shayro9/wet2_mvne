@@ -120,7 +120,10 @@
 		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/UnionFind.h">
 			<Option target="wet2_mvne"/>
 		</Unit>
-		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/temp_main.cpp">
+		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/WorldCupTests/UnitTests.cpp">
+			<Option target="wet2_mvne"/>
+		</Unit>
+		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/WorldCupTests/catch.hpp">
 			<Option target="wet2_mvne"/>
 		</Unit>
 		<Unit filename="C:/Users/amida/CLionProjects/untitled1/wet2_mvne/wet2util.h">

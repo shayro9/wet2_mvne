@@ -107,7 +107,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
 
         new_player->setPrevSpirits(new_player->getSpirit());
     }
-
+    currTeam->setTeamSpirit(spirit);
     currTeam->addAbility(ability);
     currTeam->addPlayers(1);
     currTeam->getTeamAbilityPointer()->addAbility(ability);
@@ -142,7 +142,7 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
     if (teamId1<=0 || teamId2<=0 || teamId1==teamId2){
         return StatusType::INVALID_INPUT;
     }
-    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
+    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2) || !teamsTree.find(teamId1)->data.isValid() || !teamsTree.find(teamId2)->data.isValid()){
         return StatusType::FAILURE;
     }
     if (!teamsTree.find(teamId1)->data.isValid() || !teamsTree.find(teamId1)->data.isValid()){
@@ -155,17 +155,40 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
 
         int score1 = team1->getPoints() + team1->getAbility();
         int score2 = team2->getPoints() + team2->getAbility();
+        team1->addGamesPlayed(1);
+        team2->addGamesPlayed(1);
         if (score1 > score2){
+            team1->addPoints(3);
             return 1;
         }
         if (score2 > score1){
+            team2->addPoints(3);
             return 3;
         }
+        if (score1 == score2){
+            int strength1 = team1->getTeamSpirit().strength();
+            int strength2 = team2->getTeamSpirit().strength();
+            if (strength1 > strength2){
+                team1->addPoints(3);
+                return 2;
+            }
+            if (strength2 > strength1){
+                team2->addPoints(3);
+                return 4;
+            }
+            else{
+                team1->addPoints(1);
+                team2->addPoints(1);
+                return 0;
+            }
+        }
+
     }
     catch ( ... )
     {
 
     }
+
 	return StatusType::SUCCESS;
 }
 
@@ -208,7 +231,7 @@ StatusType world_cup_t::add_player_cards(int playerId, int cards)
         return StatusType::INVALID_INPUT;
     }
     Player* currPlayer = players.getPlayer(playerId);
-    if (!players.FindTeam(playerId) || players.doesExist(playerId)){
+    if (!players.FindTeam(playerId) || !players.doesExist(playerId)){
         return StatusType::FAILURE;
     }
     try
@@ -280,6 +303,15 @@ output_t<int> world_cup_t::get_ith_pointless_ability(int i)
 output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
 {
 	// TODO: Your code goes here
+    if (playerId <= 0){
+        return StatusType::INVALID_INPUT;
+    }
+    if (!players.doesExist(playerId)){
+        return StatusType::FAILURE;
+    }
+    else if (!players.findRoot(playerId)->getTeam()){ //if team was removed
+        return StatusType::FAILURE;
+    }
 
     Player* curr_player = players.getPlayer(playerId);
     Player* root = players.findRoot(playerId);

@@ -21,4 +21,5 @@ add_executable(wet2_mvne
         DynamicHash.h
         List.h
         DynamicHash.cpp
-        temp_main.cpp)
+        WorldCupTests/UnitTests.cpp
+        WorldCupTests/catch.hpp)
