@@ -45,6 +45,7 @@ public:
     void setTeamSpirit(const permutation_t& spirit);
     void addGamesPlayed(int amount);
     void addPoints(int amount);
+    int getSize();
 
     friend bool operator== (const Team&, const Team&);
     friend bool operator< (const Team&, const Team&);

@@ -58,7 +58,22 @@ Team *UnionFind::FindTeam(int playerid) {
 }
 
 void UnionFind::Unite(int playerid1, int playerid2) {
-
+    Player* root1 = players.getPlayer(playerid1);
+    Player* root2 = players.getPlayer(playerid2);
+    Team* team1 = root1->getTeam();
+    Team* team2 = root2->getTeam();
+    int size1 = team1->getSize();
+    int size2 = team2->getSize();
+    if (size1 >= size2){
+        root2->setTeam(nullptr);
+        root2->setFather(root1);
+        team1->addPlayers(size2);
+    }
+    else{
+        root1->setTeam(nullptr);
+        root1->setFather(root2);
+        team2->addPlayers(size1);
+    }
     /*
     int index1 = hash(playerid1);
     int index2 = hash(playerid2);
