@@ -68,7 +68,8 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         root2->setTeam(nullptr);
         root2->setFather(root1);
         root2->setTeamPlayedBefore(root1->getGamesPlayed());
-
+        root2->setPrevSpirits(root1->getSpiritSum());
+        root1->increaseSpiritSum(root2->getSpiritSum());
     }
     else{
         root1->setTeam(nullptr);
@@ -76,6 +77,8 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         root2->setTeam(team1);
         team1->setRootPlayer(root2);
         root1->setTeamPlayedBefore(root2->getGamesPlayed());
+
+        root1->setPrevSpirits(root2->getSpiritSum().inv());
     }
     team2->setRootPlayer(nullptr);
     team1->addPlayers(size2);
@@ -120,7 +123,7 @@ Player *UnionFind::findRoot(int playerId) {
     }
     Player* currPlayer = players.getPlayer(playerId);
     int sum_player_played = currPlayer->getGamesPlayed() - currPlayer->getTeamPlayedBefore();
-    permutation_t route_spirit_sum = permutation_t().neutral();
+    permutation_t route_spirit_sum = currPlayer->getPrevSpirit();
     while (currPlayer->getFather()){
         currPlayer = currPlayer->getFather();
         sum_player_played += currPlayer->getGamesPlayed() - currPlayer->getTeamPlayedBefore();
@@ -129,6 +132,7 @@ Player *UnionFind::findRoot(int playerId) {
         route_spirit_sum = route_spirit_sum * currPlayer->getPrevSpirit();
     } 
     Player* root = currPlayer;
+    route_spirit_sum = permutation_t(route_spirit_sum * root->getPrevSpirit());
     currPlayer = players.getPlayer(playerId);
     while (currPlayer->getFather() != root && currPlayer->getFather() != nullptr){
         currPlayer->increaseGamesPlayed(sum_player_played - currPlayer->getGamesPlayed());
