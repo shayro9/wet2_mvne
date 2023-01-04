@@ -324,19 +324,21 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 {
 	// TODO: Your code goes here
-    if (teamId1 <= 0 || teamId2 <= 0 || teamId1 == teamId2){
+    if(teamId1 == teamId2 || teamId1 <= 0 || teamId2 <= 0)
         return StatusType::INVALID_INPUT;
-    }
-    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
+
+
+
+    node<Team>* team1 = teamsTree.find(teamId1);
+    node<Team>* team2 = teamsTree.find(teamId2);
+
+    if(!team1 || !team2)
         return StatusType::FAILURE;
-    }
-    try
-    {
 
     Team* buying = &team1->data;
     Team* bought = &team2->data;
 
-    Player* buying_root = buying->getRootPlayer(); 
+    Player* buying_root = buying->getRootPlayer();
     Player* bought_root = bought->getRootPlayer();
 
     players.Unite(buying_root->getId(),bought_root->getId());
@@ -344,10 +346,5 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 
 
 
-    }
-    catch (...)
-    {
-        return StatusType::ALLOCATION_ERROR;
-    }
-	return StatusType::SUCCESS;
+    return StatusType::SUCCESS;
 }
