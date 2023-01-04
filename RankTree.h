@@ -334,7 +334,7 @@ int RankTree<T>::nodesOf(node<T> *n) {
 
 template<class T>
 node<T>* RankTree<T>::select(int i) {
-    return selectRec(m_root,i);
+    return selectRec(m_root,i+1);
 }
 
 template<class T>
