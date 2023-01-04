@@ -13,9 +13,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj.d"
   "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj"
   "CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj.d"
-  "libwet2_mvne.dll.a"
   "wet2_mvne.exe"
   "wet2_mvne.exe.manifest"
+  "wet2_mvne.lib"
   "wet2_mvne.pdb"
 )
 

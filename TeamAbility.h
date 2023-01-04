@@ -14,6 +14,7 @@ class TeamAbility{
 public:
     TeamAbility(int teamid);
     TeamAbility() = default;
+    TeamAbility(const TeamAbility& p1) = default;
     ~TeamAbility() = default;
     void addAbility(int amount);
     int getId();
