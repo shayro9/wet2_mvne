@@ -56,8 +56,7 @@ StatusType world_cup_t::remove_team(int teamId)
         Player* root = to_remove->data.getRootPlayer();
         if(root) {
             root->setTeamPlayed(to_remove->data.getTeamPlayed());
-            if(root->getTeam() == &to_remove->data)
-                root->setTeam(nullptr);
+            root->setTeam(nullptr);
         }
         teamsAbilityTree.remove(*to_remove->data.getTeamAbilityPointer());
         teamsTree.remove(to_remove->data);
@@ -88,6 +87,9 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     Team* currTeam = &teamsTree.find(teamId)->data;
     Player* new_player = new Player(playerId, teamId, spirit, gamesPlayed, ability, cards, goalKeeper);
 
+    //TODO: not sure this is right
+    new_player->setTeamPlayedBefore(currTeam->getTeamPlayed());
+
     if (goalKeeper){
         currTeam->makeValid();
     }
@@ -95,7 +97,6 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     Player* root = currTeam->getRootPlayer();
     if (root){
         new_player->setFather(root);
-        new_player->setTeamPlayedBefore(root->getGamesPlayed());
 
         new_player->setPrevSpirits(root->getSpiritSum());
         root->increaseSpiritSum(new_player->getSpirit());
@@ -141,14 +142,10 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
     if (teamId1<=0 || teamId2<=0 || teamId1==teamId2){
         return StatusType::INVALID_INPUT;
     }
-
-    node<Team>* team_node1 = teamsTree.find(teamId1);
-    node<Team>* team_node2 = teamsTree.find(teamId2);
-
-    if (!team_node1 || !team_node2){
+    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2) || !teamsTree.find(teamId1)->data.isValid() || !teamsTree.find(teamId2)->data.isValid()){
         return StatusType::FAILURE;
     }
-    if (!team_node1->data.isValid() || !team_node2->data.isValid()){
+    if (!teamsTree.find(teamId1)->data.isValid() || !teamsTree.find(teamId1)->data.isValid()){
         return StatusType::FAILURE;
     }
     try
@@ -160,8 +157,6 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
         int score2 = team2->getPoints() + team2->getAbility();
         team1->addGamesPlayed(1);
         team2->addGamesPlayed(1);
-        team1->getRootPlayer()->increaseGamesPlayed(1);
-        team2->getRootPlayer()->increaseGamesPlayed(1);
         if (score1 > score2){
             team1->addPoints(3);
             return 1;
@@ -212,13 +207,13 @@ output_t<int> world_cup_t::num_played_games_for_player(int playerId)
         Player* currRoot = players.findRoot(playerId);
         int gamesPlayed = currPlayer->getGamesPlayed();
         int teamPlayedBefore = currPlayer->getTeamPlayedBefore();
-        if (currPlayer != currRoot){ // if team exist
-            int root_games_played = currRoot->getGamesPlayed();
-            int root_games_played_before = currRoot->getTeamPlayedBefore();
-            return gamesPlayed + root_games_played - (teamPlayedBefore - root_games_played_before);
+        if (currRoot->getTeam()){ // if team exist
+            int teamPlayed = currRoot->getTeam()->getTeamPlayed();
+            return gamesPlayed + teamPlayed  - teamPlayedBefore;
         }
         else{
-            return gamesPlayed - teamPlayedBefore;
+            int teamPlayed = currRoot->getTeamPlayed();
+            return gamesPlayed + teamPlayed + currRoot->getGamesPlayed() - teamPlayedBefore;
         }
     }
     catch (...)
@@ -329,14 +324,14 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 {
 	// TODO: Your code goes here
-    if(teamId1 == teamId2 || teamId1 <= 0 || teamId2 <= 0)
+    if (teamId1 <= 0 || teamId2 <= 0 || teamId1 == teamId2){
         return StatusType::INVALID_INPUT;
-
-    node<Team>* team1 = teamsTree.find(teamId1);
-    node<Team>* team2 = teamsTree.find(teamId2);
-
-    if(!team1 || !team2)
+    }
+    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
         return StatusType::FAILURE;
+    }
+    try
+    {
 
     Team* buying = &team1->data;
     Team* bought = &team2->data;
@@ -351,5 +346,10 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 
 
 
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
 	return StatusType::SUCCESS;
 }

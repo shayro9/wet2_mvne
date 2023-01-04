@@ -21,4 +21,4 @@ add_executable(wet2_mvne
         DynamicHash.h
         List.h
         DynamicHash.cpp
-        main.cpp)
+        main23a2.cpp)

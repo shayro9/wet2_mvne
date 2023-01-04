@@ -553,8 +553,8 @@ CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/DynamicHash.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/List.h
 
-CMakeFiles/wet2_mvne.dir/main.cpp.obj
- C:/Users/amida/CLionProjects/untitled1/wet2_mvne/main.cpp
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj
+ C:/Users/amida/CLionProjects/untitled1/wet2_mvne/main23a2.cpp
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/worldcup23a2.h
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/wet2util.h
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept
@@ -696,10 +696,6 @@ CMakeFiles/wet2_mvne.dir/main.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream
  C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
- C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/string.h
- C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h
- C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream
- C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc
 
 CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj
  C:/Users/amida/CLionProjects/untitled1/wet2_mvne/worldcup23a2.cpp
