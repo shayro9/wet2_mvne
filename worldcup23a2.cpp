@@ -324,5 +324,22 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 {
 	// TODO: Your code goes here
+    if (teamId1 <= 0 || teamId2 <= 0 || teamId1 == teamId2){
+        return StatusType::INVALID_INPUT;
+    }
+    if (!teamsTree.find(teamId1) || !teamsTree.find(teamId2)){
+        return StatusType::FAILURE;
+    }
+    try
+    {
+        Team* buyerTeam = &teamsTree.find(teamId1)->data;
+        Team* boughtTeam = &teamsTree.find(teamId2)->data;
+
+
+    }
+    catch (...)
+    {
+        return StatusType::ALLOCATION_ERROR;
+    }
 	return StatusType::SUCCESS;
 }
