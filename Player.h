@@ -12,10 +12,10 @@
 class Player{
     int m_playerId;
     int m_teamId;
-    int m_gamesPlayed;
     int m_cards;
     bool m_goalKeeper;
     int m_ability;
+    int m_gamesPlayed;
     int m_teamPlayedBefore;
     int m_teamPlayed;
     Team* m_team;
@@ -39,6 +39,7 @@ public:
     void setFather(Player* player);
     void setTeamPlayedBefore(int num);
     void setTeamPlayed(int num);
+    void increaseGamesPlayed(int amount);
     void setPrevSpirits(const permutation_t &sum_prev_spirits);
     void increaseSpiritSum(const permutation_t &sons_spirit);
 

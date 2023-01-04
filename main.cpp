@@ -67,4 +67,5 @@ int main(){
     (str(resn7.ans()) == str(perm1 * perm2));
 
     delete obj;
+    return 0;
 }

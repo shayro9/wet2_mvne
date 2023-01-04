@@ -33,7 +33,6 @@ public:
     void setRootPlayer(Player* player);
     void addAbility(int amount);
     void SetTeamAbilityPointer(TeamAbility* teamAbility);
-    void PlayGame(int points);
     TeamAbility* getTeamAbilityPointer();
     void makeValid();
     bool isValid();
