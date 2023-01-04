@@ -341,7 +341,7 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
     Team* buying = &team1->data;
     Team* bought = &team2->data;
 
-    Player* buying_root = buying->getRootPlayer();
+    Player* buying_root = buying->getRootPlayer(); 
     Player* bought_root = bought->getRootPlayer();
 
     players.Unite(buying_root->getId(),bought_root->getId());
