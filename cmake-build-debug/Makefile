@@ -248,29 +248,29 @@ UnionFind.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/UnionFind.cpp.s
 .PHONY : UnionFind.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+main23a2.obj: main23a2.cpp.obj
+.PHONY : main23a2.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+main23a2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj
+.PHONY : main23a2.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+main23a2.i: main23a2.cpp.i
+.PHONY : main23a2.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main.cpp.i
-.PHONY : main.cpp.i
+main23a2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main23a2.cpp.i
+.PHONY : main23a2.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+main23a2.s: main23a2.cpp.s
+.PHONY : main23a2.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main.cpp.s
-.PHONY : main.cpp.s
+main23a2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wet2_mvne.dir\build.make CMakeFiles/wet2_mvne.dir/main23a2.cpp.s
+.PHONY : main23a2.cpp.s
 
 worldcup23a2.obj: worldcup23a2.cpp.obj
 .PHONY : worldcup23a2.obj
@@ -320,9 +320,9 @@ help:
 	@echo ... UnionFind.obj
 	@echo ... UnionFind.i
 	@echo ... UnionFind.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... main23a2.obj
+	@echo ... main23a2.i
+	@echo ... main23a2.s
 	@echo ... worldcup23a2.obj
 	@echo ... worldcup23a2.i
 	@echo ... worldcup23a2.s

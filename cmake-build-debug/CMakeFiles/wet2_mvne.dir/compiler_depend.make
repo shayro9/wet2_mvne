@@ -548,7 +548,7 @@ CMakeFiles/wet2_mvne.dir/UnionFind.cpp.obj: ../UnionFind.cpp \
   ../DynamicHash.h \
   ../List.h
 
-CMakeFiles/wet2_mvne.dir/main.cpp.obj: ../main.cpp \
+CMakeFiles/wet2_mvne.dir/main23a2.cpp.obj: ../main23a2.cpp \
   ../worldcup23a2.h \
   ../wet2util.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept \
@@ -689,11 +689,7 @@ CMakeFiles/wet2_mvne.dir/main.cpp.obj: ../main.cpp \
   ../List.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
   C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
-  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
-  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/string.h \
-  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
-  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
-  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc
+  C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
 
 CMakeFiles/wet2_mvne.dir/worldcup23a2.cpp.obj: ../worldcup23a2.cpp \
   ../worldcup23a2.h \
@@ -871,8 +867,6 @@ C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/vadefs.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/localefwd.h:
-
-../main.cpp:
 
 ../Player.cpp:
 
@@ -1102,8 +1096,6 @@ C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype:
 
-C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream:
-
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h:
@@ -1124,6 +1116,8 @@ C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 
 ../UnionFind.h:
 
+../main23a2.cpp:
+
 ../worldcup23a2.h:
 
 ../RankTree.h:
@@ -1131,11 +1125,5 @@ C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream:
-
-C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/string.h:
-
-C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h:
-
-C:/Program\ Files/JetBrains/CLion\ 2022.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc:
 
 ../worldcup23a2.cpp:

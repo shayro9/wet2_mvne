@@ -209,7 +209,7 @@ output_t<int> world_cup_t::num_played_games_for_player(int playerId)
         int teamPlayedBefore = currPlayer->getTeamPlayedBefore();
         if (currRoot->getTeam()){ // if team exist
             int teamPlayed = currRoot->getTeam()->getTeamPlayed();
-            return gamesPlayed + teamPlayed + currRoot->getGamesPlayed() - teamPlayedBefore;
+            return gamesPlayed + teamPlayed  - teamPlayedBefore;
         }
         else{
             int teamPlayed = currRoot->getTeamPlayed();
