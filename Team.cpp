@@ -84,6 +84,19 @@ int Team::getSize() {
     return m_numOfPlayers;
 }
 
+void Team::BuyWhenEmpty(Team *bought) {
+    m_points = bought->m_points;
+    m_abilitySum = bought->m_abilitySum;
+    m_rootPlayer = bought->m_rootPlayer;
+    m_isValid = bought->m_isValid;
+    m_gamesPlayed = bought->m_gamesPlayed;
+    m_numOfPlayers = bought->m_numOfPlayers;
+}
+
+int Team::getId() {
+    return m_teamId;
+}
+
 
 bool operator> (const Team& t1, const Team& t2){
     return t2 < t1;

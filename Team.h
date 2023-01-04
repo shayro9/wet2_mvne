@@ -29,6 +29,7 @@ public:
     Team(int teamId);
     Team() = default;
     ~Team() = default;
+    void BuyWhenEmpty(Team* bought);
     Player* getRootPlayer();
     void setRootPlayer(Player* player);
     void addAbility(int amount);
@@ -36,6 +37,7 @@ public:
     TeamAbility* getTeamAbilityPointer();
     void makeValid();
     bool isValid();
+    int getId();
     int getPoints();
     int getAbility();
     int getTeamPlayed();
