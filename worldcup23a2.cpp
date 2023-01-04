@@ -332,8 +332,16 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
     }
     try
     {
-        Team* buyerTeam = &teamsTree.find(teamId1)->data;
-        Team* boughtTeam = &teamsTree.find(teamId2)->data;
+
+    Team* buying = &team1->data;
+    Team* bought = &team2->data;
+
+    Player* buying_root = buying->getRootPlayer(); 
+    Player* bought_root = bought->getRootPlayer();
+
+    players.Unite(buying_root->getId(),bought_root->getId());
+    remove_team(teamId2);
+
 
 
     }
