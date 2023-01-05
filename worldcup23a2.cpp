@@ -115,7 +115,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     currTeam->addAbility(ability);
 
     TeamAbility* new_team_ability = new TeamAbility(currTeam->getId());
-    new_team_ability->addAbility(currTeam->getAbility() + ability);
+    new_team_ability->addAbility(currTeam->getAbility());
     TeamAbility* temp = currTeam->getTeamAbilityPointer();
     teamsAbilityTree.remove(*temp);
     teamsAbilityTree.insert(*new_team_ability);
@@ -343,11 +343,6 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
     if(teamId1 == teamId2 || teamId1 <= 0 || teamId2 <= 0)
         return StatusType::INVALID_INPUT;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3fab327ff3ba4641a0a97a3c99811439f35e796c
     node<Team>* team1 = teamsTree.find(teamId1);
     node<Team>* team2 = teamsTree.find(teamId2);
 
@@ -389,9 +384,5 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
 
 
 
-<<<<<<< HEAD
     return StatusType::SUCCESS;
-=======
-	return StatusType::SUCCESS;
->>>>>>> 3fab327ff3ba4641a0a97a3c99811439f35e796c
 }

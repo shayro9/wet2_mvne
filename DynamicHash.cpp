@@ -25,8 +25,10 @@ void DynamicHash::insert(Player &player) {
     if (m_tableSize == m_currSize + 1){
         try
         {
-            List<Player>* new_playersArray = new List<Player>[m_tableSize*2];
-            for (int i = 0; i < m_tableSize; i++){
+            int old_tableSize = m_tableSize;
+            m_tableSize = m_tableSize*2;
+            List<Player>* new_playersArray = new List<Player>[m_tableSize];
+            for (int i = 0; i < old_tableSize; i++){
                 LNode<Player>* iter = m_playersArray[i].getHead();
                 while (iter){
                     Player* temp = iter->m_data;
@@ -36,10 +38,10 @@ void DynamicHash::insert(Player &player) {
             }
             delete[] m_playersArray;
             m_playersArray = new_playersArray;
-            m_tableSize *=2;
         }
         catch (...)
         {
+            // table_size = old_table_size
             //delete[] new_playersArray;
             //add
         }
