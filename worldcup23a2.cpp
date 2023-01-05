@@ -44,10 +44,6 @@ StatusType world_cup_t::add_team(int teamId)
 StatusType world_cup_t::remove_team(int teamId)
 {
 	// TODO: Your code goes here
-    if(teamId == 10)
-    {
-        int x = 0;
-    }
     if (teamId <= 0){
         return StatusType::INVALID_INPUT;
     }
@@ -80,7 +76,6 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
                                    int ability, int cards, bool goalKeeper)
 {
 	// TODO: Your code goes here
-
     if (playerId <= 0 || teamId <=0 || gamesPlayed<0 || cards<0 || !spirit.isvalid()){
         return StatusType::INVALID_INPUT;
     }
@@ -113,13 +108,15 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     currTeam->setTeamSpirit(spirit);
     currTeam->addPlayers(1);
     currTeam->addAbility(ability);
-
-    TeamAbility* new_team_ability = new TeamAbility(currTeam->getId());
-    new_team_ability->addAbility(currTeam->getAbility());
-    TeamAbility* temp = currTeam->getTeamAbilityPointer();
-    teamsAbilityTree.remove(*temp);
-    teamsAbilityTree.insert(*new_team_ability);
-    currTeam->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
+    if(ability > 0) {
+        TeamAbility *new_team_ability = new TeamAbility(currTeam->getId());
+        new_team_ability->addAbility(currTeam->getAbility());
+        TeamAbility *temp = currTeam->getTeamAbilityPointer();
+        teamsAbilityTree.remove(*temp);
+        teamsAbilityTree.insert(*new_team_ability);
+        currTeam->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
+        delete new_team_ability;
+    }
 
 
 
@@ -373,12 +370,15 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
         buying->setTeamSpirit(permutation_t(buying->getTeamSpirit() * bought->getTeamSpirit()));
 
         buying->addAbility(bought->getAbility());
-        TeamAbility* new_team_ability = new TeamAbility(teamId1);
-        new_team_ability->addAbility(buying->getAbility() + bought->getAbility());
-        TeamAbility* temp = buying->getTeamAbilityPointer();
-        teamsAbilityTree.remove(*temp);
-        teamsAbilityTree.insert(*new_team_ability);
-        buying->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
+        if(bought->getAbility() > 0) {
+            TeamAbility *new_team_ability = new TeamAbility(teamId1);
+            new_team_ability->addAbility(buying->getAbility() + bought->getAbility());
+            TeamAbility *temp = buying->getTeamAbilityPointer();
+            teamsAbilityTree.remove(*temp);
+            teamsAbilityTree.insert(*new_team_ability);
+            buying->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
+            delete new_team_ability;
+        }
     }
     remove_team(teamId2);
 

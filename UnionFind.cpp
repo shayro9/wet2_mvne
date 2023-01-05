@@ -13,7 +13,7 @@ void UnionFind::AddFirstPlayer(Player player, Team* team) {
 
     }
     players.insert(player);
-    /*int index = hash(player.getId());
+    int index = hash(player.getId());
     player.setTeam(team);
     sizes[index] = 1;
     players[index] = &player;
