@@ -76,6 +76,10 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
                                    int ability, int cards, bool goalKeeper)
 {
 	// TODO: Your code goes here
+    if(playerId == 615)
+    {
+        int x = 0;
+    }
     if (playerId <= 0 || teamId <=0 || gamesPlayed<0 || cards<0 || !spirit.isvalid()){
         return StatusType::INVALID_INPUT;
     }
@@ -103,7 +107,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
         new_player->setTeam(currTeam);
         currTeam->setRootPlayer(new_player);
 
-        new_player->setPrevSpirits(new_player->getSpirit());
+        new_player->setPrevSpirits(permutation_t().neutral());
     }
     currTeam->setTeamSpirit(spirit);
     currTeam->addPlayers(1);
@@ -330,8 +334,8 @@ output_t<permutation_t> world_cup_t::get_partial_spirit(int playerId)
     Player* root = players.findRoot(playerId);
 
     if(root == curr_player)
-        return curr_player->getSpirit();
-    return curr_player->getPrevSpirit() * curr_player->getSpirit();
+        return curr_player->getPrevSpirit() * curr_player->getSpirit();
+    return root->getPrevSpirit() * curr_player->getPrevSpirit() * curr_player->getSpirit();
 }
 
 StatusType world_cup_t::buy_team(int teamId1, int teamId2)
