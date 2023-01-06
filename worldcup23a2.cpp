@@ -76,10 +76,6 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
                                    int ability, int cards, bool goalKeeper)
 {
 	// TODO: Your code goes here
-    if(playerId == 615)
-    {
-        int x = 0;
-    }
     if (playerId <= 0 || teamId <=0 || gamesPlayed<0 || cards<0 || !spirit.isvalid()){
         return StatusType::INVALID_INPUT;
     }
