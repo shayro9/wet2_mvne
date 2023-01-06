@@ -355,6 +355,12 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
     if(buying_root == nullptr)
     {
         buying->BuyWhenEmpty(bought);
+        TeamAbility *new_team_ability = new TeamAbility(teamId1);
+        new_team_ability->addAbility( bought->getAbility());
+        TeamAbility *temp = buying->getTeamAbilityPointer();
+        teamsAbilityTree.remove(*temp);
+        teamsAbilityTree.insert(*new_team_ability);
+        buying->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
 
         if(bought_root != nullptr)
             buying->getRootPlayer()->setTeam(buying);

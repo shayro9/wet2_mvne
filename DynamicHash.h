@@ -19,6 +19,7 @@ class DynamicHash{
 public:
     DynamicHash();
     ~DynamicHash();
+    void ClearPastArray(int past_size);
     int hashFunc(int num);
     Player* getPlayer(int num);
     void insert(Player& player);

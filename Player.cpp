@@ -87,5 +87,28 @@ void Player::increaseGamesPlayed(int amount) {
     m_gamesPlayed += amount;
 }
 
+Player::~Player() {
+    delete(m_spirit);
+    delete(m_prev_spirit);
+}
+
+Player::Player(const Player &p1) {
+    m_playerId = p1.m_playerId;
+    m_teamId = p1.m_teamId;
+    m_cards = p1.m_cards;
+    m_goalKeeper = p1.m_goalKeeper;
+    m_ability = p1.m_ability;
+    m_gamesPlayed = p1.m_gamesPlayed;
+    m_teamPlayedBefore = p1.m_teamPlayedBefore;
+    m_teamPlayed = p1.m_teamPlayed;
+    m_team = p1.m_team;
+    m_father = p1.m_father;
+    extra = p1.extra;
+
+    m_spirit = new permutation_t(*p1.m_spirit);
+    m_sum_spirit = p1.m_sum_spirit;
+    m_prev_spirit = new permutation_t(*p1.m_prev_spirit);
+}
+
 
 

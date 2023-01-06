@@ -23,6 +23,7 @@ private:
 public:
     List();
     ~List();
+    void deleteNodes();
     //List(const List<T>& l) = delete;
     List<T>& operator=(const List<T>& l) = delete;
 
@@ -50,10 +51,12 @@ List<T>::~List() {
     if(m_head) {
         LNode<T> *curr_node = m_head->m_next;
         while (curr_node) {
-            delete (&curr_node->m_prev->m_data);
+            delete (curr_node->m_prev->m_data);
+            delete(curr_node->m_prev);
             curr_node = curr_node->m_next;
         }
-        delete(&m_tail->m_data);
+        delete(m_tail->m_data);
+        delete(m_tail);
     }
 }
 
@@ -152,6 +155,19 @@ void List<T>::append(T& data) {
 template<class T>
 int List<T>::getSize() {
     return m_size;
+}
+
+template<class T>
+void List<T>::deleteNodes() {
+    if(m_head) {
+        LNode<T> *curr_node = m_head->m_next;
+        while (curr_node) {
+            delete(curr_node->m_prev);
+            curr_node = curr_node->m_next;
+        }
+        delete(m_tail);
+    }
+    m_head = nullptr;
 }
 
 #endif //WET2_MVNE_LIST_H

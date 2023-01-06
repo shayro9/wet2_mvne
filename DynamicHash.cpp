@@ -36,7 +36,7 @@ void DynamicHash::insert(Player &player) {
                     iter = iter->m_next;
                 }
             }
-            delete[] m_playersArray;
+            ClearPastArray(old_tableSize);
             m_playersArray = new_playersArray;
         }
         catch (...)
@@ -51,12 +51,11 @@ void DynamicHash::insert(Player &player) {
     m_currSize++;
 }
 
-DynamicHash::DynamicHash() :m_tableSize(10), m_currSize(0), m_playersArray(new List<Player>[10]){
+DynamicHash::DynamicHash() : m_playersArray(new List<Player>[10]), m_tableSize(10), m_currSize(0){
 
 }
 
 bool DynamicHash::doesExist(int id) {
-    int index = hashFunc(id);
     if (!getPlayer(id)){
         return false;
     }
@@ -64,6 +63,14 @@ bool DynamicHash::doesExist(int id) {
 }
 
 DynamicHash::~DynamicHash() {
+    delete[] m_playersArray;
+}
+
+void DynamicHash::ClearPastArray(int past_size) {
+    for (int i = 0; i < past_size; ++i) {
+        if(m_playersArray[i].getHead())
+            m_playersArray[i].deleteNodes();
+    }
     delete[] m_playersArray;
 }
 
