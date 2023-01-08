@@ -68,7 +68,7 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         root2->setTeam(nullptr);
         root2->setFather(root1);
         root2->setTeamPlayedBefore(root1->getGamesPlayed());
-        root2->setPrevSpirits(root1->getSpiritSum());
+        root2->setPrevSpirits(root1->getSpiritSum() * root2->getPrevSpirit().inv());
         root1->increaseSpiritSum(root2->getSpiritSum());
     }
     else{
@@ -78,8 +78,9 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         team1->setRootPlayer(root2);
         root1->setTeamPlayedBefore(root2->getGamesPlayed());
 
-        root2->setPrevSpirits(root1->getSpiritSum());
+        root2->setPrevSpirits(root1->getSpiritSum() * root2->getPrevSpirit());
         root1->setPrevSpirits(root2->getPrevSpirit().inv());
+        root2->increaseSpiritSumFromLeft(root1->getSpiritSum());
     }
     team2->setRootPlayer(nullptr);
     team1->addPlayers(size2);
@@ -129,17 +130,16 @@ Player *UnionFind::findRoot(int playerId) {
         currPlayer = currPlayer->getFather();
         sum_player_played += currPlayer->getGamesPlayed() - currPlayer->getTeamPlayedBefore();
 
-       // route_spirit_sum = permutation_t(route_spirit_sum * currPlayer->getPrevSpirit());
-        route_spirit_sum = route_spirit_sum * currPlayer->getPrevSpirit();
+        route_spirit_sum = currPlayer->getPrevSpirit() * route_spirit_sum ;
     } 
     Player* root = currPlayer;
-    route_spirit_sum = permutation_t(route_spirit_sum * root->getPrevSpirit());
+    //route_spirit_sum = permutation_t(route_spirit_sum * root->getPrevSpirit().inv());
     currPlayer = players.getPlayer(playerId);
     while (currPlayer->getFather() != root && currPlayer->getFather() != nullptr){
         currPlayer->increaseGamesPlayed(sum_player_played - currPlayer->getGamesPlayed());
         currPlayer->setTeamPlayedBefore(root->getGamesPlayed());
 
-        currPlayer->setPrevSpirits(route_spirit_sum);
+        currPlayer->setPrevSpirits(root->getPrevSpirit().inv() * route_spirit_sum);
         route_spirit_sum = permutation_t(route_spirit_sum * (currPlayer->getPrevSpirit().inv()));
 
         Player* temp = currPlayer->getFather();

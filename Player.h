@@ -43,6 +43,7 @@ public:
     void increaseGamesPlayed(int amount);
     void setPrevSpirits(const permutation_t &sum_prev_spirits);
     void increaseSpiritSum(const permutation_t &sons_spirit);
+    void increaseSpiritSumFromLeft(const permutation_t &sons_spirit);
 
     permutation_t getSpirit();
     permutation_t getSpiritSum();

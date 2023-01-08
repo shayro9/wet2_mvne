@@ -96,7 +96,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
         new_player->setFather(root);
         new_player->setTeamPlayedBefore(root->getGamesPlayed());
 
-        new_player->setPrevSpirits(root->getSpiritSum());
+        new_player->setPrevSpirits(root->getPrevSpirit().inv() * root->getSpiritSum());
         root->increaseSpiritSum(new_player->getSpirit());
     }
     else{
@@ -108,7 +108,7 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
     currTeam->setTeamSpirit(spirit);
     currTeam->addPlayers(1);
     currTeam->addAbility(ability);
-    if(ability > 0) {
+    if(ability != 0) {
         TeamAbility *new_team_ability = new TeamAbility(currTeam->getId());
         new_team_ability->addAbility(currTeam->getAbility());
         TeamAbility *temp = currTeam->getTeamAbilityPointer();
@@ -361,6 +361,7 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
         teamsAbilityTree.remove(*temp);
         teamsAbilityTree.insert(*new_team_ability);
         buying->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
+        delete new_team_ability;
 
         if(bought_root != nullptr)
             buying->getRootPlayer()->setTeam(buying);
@@ -374,11 +375,13 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
         players.Unite(buying_root->getId(), bought_root->getId());
         buying->addPoints(bought->getPoints());
         buying->setTeamSpirit(permutation_t(buying->getTeamSpirit() * bought->getTeamSpirit()));
+        if(bought->isValid())
+            buying->makeValid();
 
         buying->addAbility(bought->getAbility());
         if(bought->getAbility() > 0) {
             TeamAbility *new_team_ability = new TeamAbility(teamId1);
-            new_team_ability->addAbility(buying->getAbility() + bought->getAbility());
+            new_team_ability->addAbility(buying->getAbility());
             TeamAbility *temp = buying->getTeamAbilityPointer();
             teamsAbilityTree.remove(*temp);
             teamsAbilityTree.insert(*new_team_ability);

@@ -34,6 +34,8 @@ private:
 
     node<T>* findNode(node<T> *root, const T& t);
 
+    void updateNodesHeights(node<T> *root, const T& end_of_route);
+
     node<T>* insertNode(node<T> *root, const T& t);
 
     int height(node<T>* n);
@@ -264,21 +266,23 @@ node<T> *RankTree<T>::removeNode(node<T> *root, const T &t) {
                 m_root = min_son;
             delete (root);
             root = min_son;
-            temp_parent->height = max(height(temp_parent->r), height(temp_parent->l)) + 1;
-            temp_parent->nodes = nodesOf(temp_parent->l) + nodesOf(temp_parent->r) + 1;
+            updateNodesHeights(root,temp_parent->data);
+            //temp_parent->height = max(height(temp_parent->r), height(temp_parent->l)) + 1;
+            //temp_parent->nodes = nodesOf(temp_parent->l) + nodesOf(temp_parent->r) + 1;
         }
     }
     int h = 0, new_h = -1;
     while(h != new_h)
     {
+        root->height = max(height(root->r), height(root->l)) + 1;
+        root->nodes = nodesOf(root->l) + nodesOf(root->r) + 1;
         h = height(root);
         if(root == m_root)
             m_root = balance(root);
         else
             root = balance(root);
         new_h = height(root);
-        root->height = max(height(root->r), height(root->l)) + 1;
-        root->nodes = nodesOf(root->l) + nodesOf(root->r) + 1;
+        h = height(root);
     }
     return root;
 }
@@ -365,6 +369,19 @@ node<T> *RankTree<T>::selectRec(node<T> *root, int i) {
     else{
         return selectRec(root->r, i - nodesOf(root->l) - 1);
 
+    }
+}
+
+template<class T>
+void RankTree<T>::updateNodesHeights(node<T> *root, const T &end_of_route) {
+    if(root != nullptr) {
+        if (end_of_route < root->data)
+            updateNodesHeights(root->l, end_of_route);
+        else if (end_of_route > root->data)
+            updateNodesHeights(root->r, end_of_route);
+
+        root->height = max(height(root->r), height(root->l)) + 1;
+        root->nodes = nodesOf(root->l) + nodesOf(root->r) + 1;
     }
 }
 

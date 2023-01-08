@@ -69,6 +69,7 @@ permutation_t Player::getSpiritSum() {
 }
 
 void Player::setPrevSpirits(const permutation_t &sum_prev_spirits) {
+
     delete(m_prev_spirit);
     m_prev_spirit = new permutation_t(sum_prev_spirits);
 }
@@ -108,6 +109,12 @@ Player::Player(const Player &p1) {
     m_spirit = new permutation_t(*p1.m_spirit);
     m_sum_spirit = p1.m_sum_spirit;
     m_prev_spirit = new permutation_t(*p1.m_prev_spirit);
+}
+
+void Player::increaseSpiritSumFromLeft(const permutation_t &sons_spirit) {
+    permutation_t* temp = new permutation_t(sons_spirit * m_sum_spirit);
+    m_sum_spirit = permutation_t(*temp);
+    delete(temp);
 }
 
 
