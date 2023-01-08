@@ -379,7 +379,7 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
             buying->makeValid();
 
         buying->addAbility(bought->getAbility());
-        if(bought->getAbility() > 0) {
+        if(bought->getAbility() != 0) {
             TeamAbility *new_team_ability = new TeamAbility(teamId1);
             new_team_ability->addAbility(buying->getAbility());
             TeamAbility *temp = buying->getTeamAbilityPointer();

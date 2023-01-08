@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TESTS_TO_RUN=50
+TESTS_TO_RUN=200
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
