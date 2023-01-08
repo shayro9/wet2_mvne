@@ -374,7 +374,7 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
     else {
         players.Unite(buying_root->getId(), bought_root->getId());
         buying->addPoints(bought->getPoints());
-        buying->setTeamSpirit(permutation_t(buying->getTeamSpirit() * bought->getTeamSpirit()));
+        buying->setTeamSpirit(bought->getTeamSpirit());
         if(bought->isValid())
             buying->makeValid();
 

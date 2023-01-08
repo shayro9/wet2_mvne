@@ -68,7 +68,7 @@ void UnionFind::Unite(int playerid1, int playerid2) {
         root2->setTeam(nullptr);
         root2->setFather(root1);
         root2->setTeamPlayedBefore(root1->getGamesPlayed());
-        root2->setPrevSpirits(root1->getSpiritSum() * root2->getPrevSpirit().inv());
+        root2->setPrevSpirits(root1->getPrevSpirit().inv() * root1->getSpiritSum() * root2->getPrevSpirit());
         root1->increaseSpiritSum(root2->getSpiritSum());
     }
     else{

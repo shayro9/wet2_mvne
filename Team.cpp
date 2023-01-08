@@ -91,6 +91,7 @@ void Team::BuyWhenEmpty(Team *bought) {
     m_isValid = bought->m_isValid;
     m_gamesPlayed = bought->m_gamesPlayed;
     m_numOfPlayers = bought->m_numOfPlayers;
+    m_teamSpirit = bought->m_teamSpirit;
     //m_teamAbility->addAbility(bought->m_abilitySum);
 }
 
