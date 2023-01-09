@@ -137,12 +137,14 @@ Player *UnionFind::findRoot(int playerId) {
     //route_spirit_sum = permutation_t(route_spirit_sum * root->getPrevSpirit().inv());
     currPlayer = players.getPlayer(playerId);
     while (currPlayer->getFather() != root && currPlayer->getFather() != nullptr){
+        int temp_game_sum = currPlayer->getGamesPlayed();
         currPlayer->increaseGamesPlayed(sum_player_played - currPlayer->getGamesPlayed());
-        sum_player_played -= currPlayer->getGamesPlayed() - currPlayer->getTeamPlayedBefore();
+        sum_player_played -= temp_game_sum - currPlayer->getTeamPlayedBefore();
         currPlayer->setTeamPlayedBefore(root->getGamesPlayed());
 
+        permutation_t temp_prev_spirits = currPlayer->getPrevSpirit();
         currPlayer->setPrevSpirits(root->getPrevSpirit().inv() * route_spirit_sum);
-        route_spirit_sum = currPlayer->getPrevSpirit().inv() * route_spirit_sum;
+        route_spirit_sum = route_spirit_sum * temp_prev_spirits.inv();
 
         Player* temp = currPlayer->getFather();
         currPlayer->setFather(root);
