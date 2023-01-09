@@ -267,8 +267,6 @@ node<T> *RankTree<T>::removeNode(node<T> *root, const T &t) {
             delete (root);
             root = min_son;
             updateNodesHeights(root,temp_parent->data);
-            //temp_parent->height = max(height(temp_parent->r), height(temp_parent->l)) + 1;
-            //temp_parent->nodes = nodesOf(temp_parent->l) + nodesOf(temp_parent->r) + 1;
         }
     }
     int h = 0, new_h = -1;
@@ -343,28 +341,11 @@ node<T>* RankTree<T>::select(int i) {
 
 template<class T>
 node<T> *RankTree<T>::selectRec(node<T> *root, int i) {
-/*
-    if (nodesOf(root->l) == i){
-        return root;
-    }
-    if (nodesOf(root->l) > i){
-        return selectRec(root->l, i);
-    }
-*/
-
-  //  if (!root->l && !root->r){
-  //      return root;
-//    }
-   // i = i+1;
     if(nodesOf(root->l) == i)
         return root;
 
     if(nodesOf(root->l) > i)
         return selectRec(root->l, i);
-
-
-  //  if(nodesOf(root->l) < i-1)
-     //   return selectRec(root->r, i - nodesOf(root->l) - 1);
 
     else{
         return selectRec(root->r, i - nodesOf(root->l) - 1);

@@ -10,17 +10,12 @@
 
 class UnionFind{
     DynamicHash players;
-  //  Player** players;
-   // int* sizes;
- //   int maxSize;
-  //  int currSize;
 
 
 public:
     UnionFind();
     ~UnionFind() = default;
-   // void AddFirstPlayer(Player player, Team* team);     //create new set
-    void AddPlayer(Player& player);          //add player to existing set
+    void AddPlayer(Player& player);
     Team* FindTeam(int playerid);
     Player* findRoot(int playerId);
     void Unite(int playerid1, int playerid2);

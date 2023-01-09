@@ -24,9 +24,6 @@ public:
     Player* getPlayer(int num);
     void insert(Player& player);
     bool doesExist(int id);
-
-
-
 };
 
 #endif //WET2_MVNE_DYNAMICHASH_H

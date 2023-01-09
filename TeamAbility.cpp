@@ -5,6 +5,10 @@
 
 #include "TeamAbility.h"
 
+TeamAbility::TeamAbility(int teamid): m_teamId(teamid), m_abilitySum(0){
+
+}
+
 bool operator==(const TeamAbility &team1, const TeamAbility &team2) {
     if (team1.m_teamId == team2.m_teamId){
         return true;
@@ -25,10 +29,6 @@ bool operator<(const TeamAbility &team1, const TeamAbility &team2) {
         }
         return false;
     }
-}
-
-TeamAbility::TeamAbility(int teamid): m_teamId(teamid), m_abilitySum(0){
-
 }
 
 void TeamAbility::addAbility(int amount) {

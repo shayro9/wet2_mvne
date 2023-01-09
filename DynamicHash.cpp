@@ -41,9 +41,7 @@ void DynamicHash::insert(Player &player) {
         }
         catch (...)
         {
-            // table_size = old_table_size
-            //delete[] new_playersArray;
-            //add
+
         }
     }
     int index = hashFunc(player.getId());

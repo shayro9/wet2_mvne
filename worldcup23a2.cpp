@@ -68,7 +68,6 @@ StatusType world_cup_t::remove_team(int teamId)
     {
         return StatusType::ALLOCATION_ERROR;
     }
-    return StatusType::FAILURE;
 }
 
 StatusType world_cup_t::add_player(int playerId, int teamId,
@@ -117,29 +116,6 @@ StatusType world_cup_t::add_player(int playerId, int teamId,
         currTeam->SetTeamAbilityPointer(&teamsAbilityTree.find(*new_team_ability)->data);
         delete new_team_ability;
     }
-
-
-
-
-/*
-    Team* currTeam = &teamsTree.find(teamId)->data;
-    Player new_player = Player(playerId, teamId, spirit, gamesPlayed, ability, cards, goalKeeper);
-    new_player.setTeamPlayedBefore(currTeam->getTeamPlayed());
-    if (goalKeeper){
-        currTeam->makeValid();
-    }
-    if (currTeam->getRootPlayer()){
-        players.AddPlayer(new_player);
-    }
-    else{
-        players.AddFirstPlayer(new_player, currTeam);
-        currTeam->setRootPlayer(&new_player);
-        new_player.setTeam(currTeam);
-    }
-    currTeam->addAbility(ability);
-    currTeam->addPlayers(1);
-    currTeam->getTeamAbilityPointer()->addAbility(ability);
-*/
 	return StatusType::SUCCESS;
 }
 
@@ -199,7 +175,7 @@ output_t<int> world_cup_t::play_match(int teamId1, int teamId2)
     }
     catch ( ... )
     {
-
+        return StatusType::ALLOCATION_ERROR;
     }
 
 	return StatusType::SUCCESS;
@@ -286,7 +262,6 @@ output_t<int> world_cup_t::get_team_points(int teamId)
         return StatusType::INVALID_INPUT;
     }
 
-    // Team* currTeam = &teams.find(teamId)->data;
     if (!teamsTree.find(teamId)){
         return StatusType::FAILURE;
     }
@@ -390,8 +365,6 @@ StatusType world_cup_t::buy_team(int teamId1, int teamId2)
         }
     }
     remove_team(teamId2);
-
-
 
     return StatusType::SUCCESS;
 }

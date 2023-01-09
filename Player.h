@@ -20,14 +20,10 @@ class Player{
     int m_teamPlayed;
     Team* m_team;
     Player* m_father;
-    int extra;
 
     const permutation_t* m_spirit;
     permutation_t m_sum_spirit;
     permutation_t* m_prev_spirit;
-
-
-
 
 public:
     Player(int playerId, int teamId,

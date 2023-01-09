@@ -3,14 +3,6 @@
 //
 #include "Player.h"
 
-int Player::getId() {
-    return m_playerId;
-}
-
-void Player::setTeam(Team* team) {
-    m_team = team;
-}
-
 Player::Player(int playerId, int teamId, const permutation_t &spirit, int gamesPlayed, int ability, int cards, bool goalKeeper):
     m_playerId(playerId), m_teamId(teamId),
     m_cards(cards), m_goalKeeper(goalKeeper), m_ability(ability), m_gamesPlayed(gamesPlayed),
@@ -18,6 +10,14 @@ Player::Player(int playerId, int teamId, const permutation_t &spirit, int gamesP
     m_sum_spirit(spirit), m_prev_spirit(nullptr)
 {
     m_spirit = new permutation_t(spirit);
+}
+
+int Player::getId() {
+    return m_playerId;
+}
+
+void Player::setTeam(Team* team) {
+    m_team = team;
 }
 
 void Player::setFather(Player *player) {
@@ -104,7 +104,6 @@ Player::Player(const Player &p1) {
     m_teamPlayed = p1.m_teamPlayed;
     m_team = p1.m_team;
     m_father = p1.m_father;
-    extra = p1.extra;
 
     m_spirit = new permutation_t(*p1.m_spirit);
     m_sum_spirit = p1.m_sum_spirit;
